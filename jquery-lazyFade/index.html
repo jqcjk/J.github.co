@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>延迟加载并渐现内容的jquery插件lazyFade</title>
+    <script src="http://libs.useso.com/js/jquery/2.1.1/jquery.min.js"></script>
+    <script src="lazyFade.js"></script>
+    <script>
+        $(function() {
+            $(".list-group div").lazyFade({
+                reverse: false,
+                duration: 250,
+                delay: 50,
+                opacity: {
+                    start: 0.01,
+                    end: 1
+                }
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <section class="container">
+        <h4>以下内容将延迟加载并渐现</h4> 
+        <div class="list-group">
+            <div class="list-group-item">Porta ac consectetur ac</div>
+            <div class="list-group-item">Vestibulum at eros</div>
+            <div class="list-group-item">Morbi leo risus</div>
+            <div class="list-group-item">Porta ac consectetur ac</div>
+            <div class="list-group-item">Vestibulum at eros</div>
+            <div class="list-group-item">Vestibulum at eros</div>
+            <div class="em">Porta ac consectetur ac</div>
+            <div class="list-group-item">Vestibulum at eros</div>
+            <div class="list-group-item">Morbi leo risus</div>
+            <div class="em">Porta ac consectetur ac</div>
+            <div class="list-group-item">Vestibulum at eros</div>
+            <div class="list-group-item">Morbi leo risus</div>
+            <div class="list-group-item">Porta ac consectetur ac</div>
+            <div class="list-group-item">Vestibulum at eros</div>
+            <div class="list-group-item">Morbi leo risus</div>
+            <div class="list-group-item">Porta ac consectetur ac</div>
+            <div class="list-group-item">Vestibulum at eros</div>
+            <div class="list-group-item">Porta ac consectetur ac</div>
+            <div class="list-group-item">Vestibulum at eros</div>
+            <div class="list-group-item">Morbi leo risus</div>
+            <div class="list-group-item">Porta ac consectetur ac</div>
+            <div class="list-group-item">Vestibulum at eros</div>
+            <div class="list-group-item">Vestibulum at eros</div>
+            <div class="em">Porta ac consectetur ac</div>
+            <div class="list-group-item">Vestibulum at eros</div>
+            <div class="list-group-item">Morbi leo risus</div>
+            <div class="em">Porta ac consectetur ac</div>
+            <div class="list-group-item">Vestibulum at eros</div>
+            <div class="list-group-item">Morbi leo risus</div>
+            <div class="list-group-item">Porta ac consectetur ac</div>
+            <div class="list-group-item">Vestibulum at eros</div>
+            <div class="list-group-item">Morbi leo risus</div>
+            <div class="list-group-item">Porta ac consectetur ac</div>
+            <div class="list-group-item">Vestibulum at eros</div>
+            <div class="list-group-item">Porta ac consectetur ac</div>
+            <div class="list-group-item">Vestibulum at eros</div>
+            <div class="list-group-item">Morbi leo risus</div>
+            <div class="list-group-item">Porta ac consectetur ac</div>
+            <div class="list-group-item">Vestibulum at eros</div>
+            <div class="list-group-item">Vestibulum at eros</div>
+            <div class="em">Porta ac consectetur ac</div>
+            <div class="list-group-item">Vestibulum at eros</div>
+            <div class="list-group-item">Morbi leo risus</div>
+            <div class="em">Porta ac consectetur ac</div>
+            <div class="list-group-item">Vestibulum at eros</div>
+            <div class="list-group-item">Morbi leo risus</div>
+            <div class="list-group-item">Porta ac consectetur ac</div>
+            <div class="list-group-item">Vestibulum at eros</div>
+            <div class="list-group-item">Morbi leo risus</div>
+            <div class="list-group-item">Porta ac consectetur ac</div>
+            <div class="list-group-item">Vestibulum at eros</div>
+        </div>
+    </section>
+</body>
+
+</html>
