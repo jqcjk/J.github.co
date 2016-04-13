@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery宽屏左右缓动滚动图文焦点图代码</title>
+<link href="css/home.css" rel="stylesheet" type="text/css">
+<script language="javascript" src="js/jquery.js"></script> 
+<script language="javascript" src="js/jquery.easing.1.3.js"></script>
+<script language="javascript" src="js/i.js"></script> 
+<style>
+.prove_index,.next_index{background:url(images/btn00.png);top:50%;height:47px;width:44px;position:absolute;margin-top:-23px;z-index:999;cursor:pointer}
+.prove_index{left:20px;background-position:44px 0; display:none;}
+.next_index{right:20px;background-position:0px 47px; display:none;}
+.prove_index:hover{background:url(images/btn00.png);background-position:0px 0px;}
+.next_index:hover{background:url(images/btn00.png);background-position:44px 47px;}
+#kfbtn{background:url(images/top_64.png);background-position:0 0;height:31px;}
+#dzbtn{background:url(images/top_34.png);background-position:0 0;height:31px;}
+#ylbtn{background:url(images/top_54.png);background-position:0 0;height:31px;}
+#jgbtn{background:url(images/top_14.png);background-position:0 0;height:31px;}
+#mzbtn{background:url(images/top_24.png);background-position:0 0;height:31px;}
+#qjbtn{background:url(images/top_44.png);background-position:0 0;height:31px;}
+#kfbtn:hover,#dzbtn:hover,#ylbtn:hover,#jgbtn:hover,#mzbtn:hover,#qjbtn:hover{background-position:0 31px;}
+</style>
+</head>
+<body>
+<div class="content_show"> 
+<div class="banner">
+<div class="banner_container" id="index_banner">
+  <div class="banner_content">
+        <div style="background-image:url(images/top_07.jpg); position: absolute;left: 50%;margin-left: -720px;">
+        <a href="#" style="width:1440px; height:525px;display:block">
+            <a id="wel_one" class="banner_link_one" style="position:absolute;left:156px;top:155px;display:block;"><img src="images/top_71.png"  class="png" /></a>
+            <a id="wel_two" class="banner_link_two" style="position:absolute;left:156px;top:220px;display:block;"><img src="images/top_72.png"  class="png" /></a>
+            <a id="wel_three" class="banner_link_three" style="position:absolute;left:156px;top:302px;display:block;"> <img src="images/top_73.png"  class="png" /></a>
+            <a id="wel_four" class="banner_link_three" style="position:absolute;left:156px;top:325px;display:block;"> <img src="images/top_74.png"  class="png" /></a>
+        </a>
+        </div>
+  </div>
+  
+  <div class="banner_content">
+    <div style="background-image:url(images/top_06.jpg); position: absolute;left: 50%;margin-left: -720px;">
+    <a href="#" style="width:1440px; height:525px;display:block">
+        <a href="#" id="kf_one" class="banner_link_one" style="position:absolute;left:357px;top:137px;display:block;"> <img src="images/top_61.png"  class="png" /></a>
+        <a href="#" id="kf_two" class="banner_link_two" style="position:absolute;left:357px;top:192px;display:block;"> <img src="images/top_62.png"  class="png" /></a>
+        <a href="#" id="kf_three" class="banner_link_three" style="position:absolute;left:357px;top:240px;display:block;"> <img src="images/top_63.png"  class="png" /></a>
+        <a href="#" id="kfbtn" class="banner_link_four png" style="position:absolute;left:357px;top:370px;display:block;width:559px"></a>
+    </a>
+    </div>
+  </div>
+  
+  <div class="banner_content">
+    <div style="background-image:url(images/top_03.jpg); position: absolute;left: 50%;margin-left: -720px;">
+    <a href="#" style="width:1440px; height:525px;display:block">
+        <a id="dz_one" href="#" class="banner_link_one" style="position:absolute;left:490px;top:133px;display:block;"><img src="images/top_31.png" class="png" /></a>
+        <a id="dz_two" href="#" class="banner_link_two" style="position:absolute;left:490px;top:227px;display:block;"><img src="images/top_32.png" class="png" /></a>
+        <a id="dz_three" href="#" class="banner_link_three" style="position:absolute;left:461px;top:266px;display:block;"><img src="images/top_33.png" class="png" /></a>
+        <a id="dzbtn" href="#" class="banner_link_four png" style="position:absolute;left:461px;top:417px;display:block;width:267px"></a>
+    </a>
+    </div>
+  </div>
+  
+  <div class="banner_content">
+    <div style="background-image:url(images/top_05.jpg); position:absolute;left:50%;margin-left:-720px;">
+    <a href="#" style="width:1440px; height:525px;display:block">
+        <a id="yl_one" href="#" class="banner_link_one" style="position:absolute;left:590px;top:122px;display:block;"> <img src="images/top_51.png"  class="png" /></a>
+        <a id="yl_two" href="#" class="banner_link_two" style="position:absolute;left:590px;top:211px;display:block;"> <img src="images/top_52.png"  class="png" /></a>
+        <a id="yl_three" href="#" class="banner_link_three" style="position:absolute;left:590px;top:252px;display:block;"> <img src="images/top_53.png"  class="png" /></a>
+        <a id="ylbtn" href="#" class="banner_link_four png" style="position:absolute;left:590px;top:371px;display:block;width:294px"></a>
+    </a>
+    </div>
+  </div>
+  
+  <div class="banner_content">
+    <div style="background-image:url(images/top_01.jpg);position:absolute;left:50%;margin-left: -720px;">
+    <a href="#" style="width:1440px; height:525px;display:block">
+        <a id="jg_one" class="banner_link_one" href="#" style="position:absolute;left:497px;top:165px;display:block;"><img src="images/top_11.png" class="png"/></a>
+        <a id="jg_two" href="#" class="banner_link_two" style="position:absolute;left:497px;top:254px;display:block;"><img src="images/top_12.png" class="png"/></a>
+        <a id="jg_three" href="#" class="banner_link_three" style="position:absolute;left:497px;top:296px;display:block;"><img src="images/top_13.png" class="png"/></a>
+        <a href="#" id="jgbtn" class="banner_link_four png" style="position:absolute;left:497px;top:404px;display:block;width:480px"></a>
+    </a>
+    </div>
+  </div>      
+  <ul class="banner_nav">
+    <li class="current"><a></a></li>
+    <li><a></a></li>
+    <li><a></a></li>
+    <li><a></a></li>
+    <li><a></a></li>
+  </ul>
+  <a class="prove_index" style="display: inline;"></a>
+  <a class="next_index" style="display: inline;"></a>
+  </div>
+</div>
+<script language="javascript">
+$().ready(function(e) {	
+	$("#wel_one").animate({left:"453px"},1400,"swing");
+	$("#wel_two").animate({left:"453px"},1200,"swing");
+	$("#wel_three").animate({left:"453px"},1000,"swing");
+	$("#wel_four").animate({left:"453px"},800,"swing");	
+	var url = window.location.href //获取当前URL
+	if(url.indexOf("?") > 0 ) {var cutUrl = url.split("?");//用“?”将URL分割成2部分 
+				var par =  cutUrl[1];
+				var idParCut = par.split("=");
+				var tid = idParCut[1];
+				var pageid =tid-1;
+				if(pageid == 1){
+					$("#kf_one").animate({left:"657px"},1400,"swing");
+					$("#kf_two").animate({left:"657px"},1200,"swing");
+					$("#kf_three").animate({left:"657px"},1000,"swing");
+					$("#kfbtn").animate({left:"657px"},800,"swing");
+				}
+				if(pageid == 2){
+					$("#dz_one").animate({left:"210px"},1400,"swing");
+					$("#dz_two").animate({left:"210px"},1200,"swing");
+					$("#dz_three").animate({left:"210px"},1000,"swing");
+					$("#dzbtn").animate({left:"210px"},800,"swing");
+				}
+				if(pageid == 3){
+					$("#yl_one").animate({left:"890px"},1400,"swing");
+					$("#yl_two").animate({left:"890px"},1200,"swing");
+					$("#yl_three").animate({left:"890px"},1000,"swing");
+					$("#ylbtn").animate({left:"890px"},800,"swing");
+				}
+				if(pageid == 4){
+					$("#jg_one").animate({left:"220px"},1400,"swing");
+					$("#jg_two").animate({left:"220px"},1200,"swing");
+					$("#jg_three").animate({left:"220px"},1000,"swing");
+					$("#jgbtn").animate({left:"220px"},800,"swing");
+				}
+	}
+	
+		$f.create($f.slide,{parent:'.banner_container',target:'.banner_content',nav:'.banner_nav li',start:pageid,easing:'easeInOutExpo',duration:1000,time:20000,auto:true,dir:0,current:'current'});
+		var pos = {
+			0:453,1:657,2:210,3:890,4:220
+
+		},offset = 600,time_one=1400,time_two=1200,time_three=1000,time_four=800;
+
+		$('.banner_content').each(function(index, element) {
+
+			$(this).bind('slideInPos',function(){
+				$(this).find('.banner_link_one').stop().css({left:pos[index]-offset}).animate({left:pos[index]},time_one,'swing');
+				$(this).find('.banner_link_two').stop().css({left:pos[index]-offset}).animate({left:pos[index]},time_two,'swing');
+				$(this).find('.banner_link_three').stop().css({left:pos[index]-offset}).animate({left:pos[index]},time_three,'swing');
+				$(this).find('.banner_link_four').stop().css({left:pos[index]-offset}).animate({left:pos[index]},time_four,'swing');
+
+			}).bind('slideInNeg',function(){
+
+				$(this).find('.banner_link_one').stop().css({left:pos[index]+offset}).animate({left:pos[index]},time_one,'swing');
+				$(this).find('.banner_link_two').stop().css({left:pos[index]+offset}).animate({left:pos[index]},time_two,'swing');
+				$(this).find('.banner_link_three').stop().css({left:pos[index]+offset}).animate({left:pos[index]},time_three,'swing');
+				$(this).find('.banner_link_four').stop().css({left:pos[index]+offset}).animate({left:pos[index]},time_four,'swing');
+
+			}).bind('slideOutPos',function(){
+
+				$(this).find('.banner_link_one').stop().css({left:pos[index]}).animate({left:pos[index]+offset},time_one,'swing');
+				$(this).find('.banner_link_two').stop().css({left:pos[index]}).animate({left:pos[index]+offset},time_two,'swing');
+				$(this).find('.banner_link_three').stop().css({left:pos[index]}).animate({left:pos[index]+offset},time_three,'swing');
+				$(this).find('.banner_link_four').stop().css({left:pos[index]}).animate({left:pos[index]+offset},time_four,'swing');
+
+			}).bind('slideOutNeg',function(){
+
+				$(this).find('.banner_link_one').stop().css({left:pos[index]}).animate({left:pos[index]-offset},time_one,'swing');
+				$(this).find('.banner_link_two').stop().css({left:pos[index]}).animate({left:pos[index]-offset},time_two,'swing');
+				$(this).find('.banner_link_three').stop().css({left:pos[index]}).animate({left:pos[index]-offset},time_three,'swing');
+				$(this).find('.banner_link_four').stop().css({left:pos[index]}).animate({left:pos[index]-offset},time_four,'swing');
+
+			});
+
+		});	
+		
+	});
+function mouseIn(id){
+	$(id).children().stop(true,true).animate({opacity:"1"},400,"easeInOutBounce")
+	}
+function mouseOut(id){
+	$(id).children().stop(true,true).animate({opacity:"0"},400,"easeInOutBounce")
+	}
+
+	$(".prove_index").click(function(){
+		$(".banner_nav li").eq($(".banner_nav li.current").index()-1).children("a").click();
+		});
+	$(".next_index   ").click(function(){
+		$(".banner_nav li").eq($(".banner_nav li.current").index()+1).children("a").click();
+		});
+		$(".next_index").click(function(){
+		if($(".banner_nav li.current").index()==6){
+			$(".banner_nav li").eq(0).children("a").click();
+			};
+		});
+		
+		$(".banner_container").mouseover(function(){
+			 $(".prove_index,.next_index").show()
+			 });
+		$(".banner_container").mouseout(function(){
+			 $(".prove_index,.next_index").hide()
+			 });
+				 
+	$(document).ready(function(e) {
+    var url = window.location.href //获取当前URL
+	if(url.indexOf("?") > 0 ) {
+		var cutUrl = url.split("?");//用“?”将URL分割成2部分 
+		var par =  cutUrl[1];
+		var idParCut = par.split("=");
+		var tid = idParCut[1];
+		if(tid==2){$(".banner_nav li").eq(1).children("a").click()}
+		if(tid==3){$(".banner_nav li").eq(2).children("a").click()}
+		if(tid==4){$(".banner_nav li").eq(3).children("a").click()}
+		if(tid==5){$(".banner_nav li").eq(4).children("a").click()}
+		if(tid==6){$(".banner_nav li").eq(5).children("a").click()}
+		if(tid==7){$(".banner_nav li").eq(6).children("a").click()}
+		else{return false}
+	}
+	else{
+	    return false;
+	}
+});	
+</script>
+</body>
+</html>
