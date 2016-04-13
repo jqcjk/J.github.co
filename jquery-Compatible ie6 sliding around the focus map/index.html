@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh" class="no-js">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta http-equiv="Content-Language" content="zh-cn" />
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>兼容ie6的左右滑动焦点图</title>
+
+<link rel="stylesheet" href="css/global.css">
+	<script src="javascript/jquery.min.js"></script>
+	<script src="javascript/slides.min.jquery.js"></script>
+	<script>
+		$(function(){
+			$('#slides').slides({
+				preload: true,
+				preloadImage: 'images/loading.gif',
+				play: 5000,
+				pause: 2500,
+				hoverPause: true,
+				animationStart: function(current){
+					
+					if (window.console && console.log) {
+						// example return of current slide number
+						console.log('animationStart on slide: ', current);
+					};
+				},
+				animationComplete: function(current){
+					
+					if (window.console && console.log) {
+						// example return of current slide number
+						console.log('animationComplete on slide: ', current);
+					};
+				},
+				slidesLoaded: function() {
+					
+				}
+			});
+		});
+	</script>
+
+</head>
+<body>
+<div id="layout">
+	<div class="wrapper" id="frame_wrapper">
+		<div id="example" class="example-slide clearfix">
+                        <div id="slides" class="slidest">
+                            <div class="slides_container">
+                                <div class="slide">
+                                	<div class="slide-all">
+                                    <a href="#" title="图片信息1" ><img src="images/banner02.gif"  alt="Slide 1" ></a>
+                                    <div class="caption">
+                                            <p>图片信息1</p>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="slide">
+                                	<div class="slide-left">
+                                    <a href="#" title="图片信息2" ><img src="images/slide-2.jpg" alt="Slide 2"></a>
+                                    </div>
+                                    <div class="slide-right">
+                                    	<div class="hotinfo-tit">图片信息2</div>
+                                		<div class="hotinfo-desc">jQuery是免费、开源的，使用MIT许可协议。jQuery的语法设计可以使开发更加便捷，例如操作文档对象、选择DOM元素、制作动画效果、事件处理、使用Ajax以及其他功能。除此以外，jQuery提供API让开发者编写插件...</div>
+                                    	<div class="hotinfo-item clearfix">
+                                        <div class="author clearfix">
+                                            <img class="left" src="images/person_09.gif">
+                                            <p class="author p-color"><a href="" >阿凡达</a></p>
+                                            <p class="pubtime">2015-09-11 19:26</p>
+                                        </div>
+                                        <div class="hotinfo-link"><a class="button small">阅读详情<img src="images/double-arrow.gif" class="doublearrow"/></a></div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="slide">
+                                	<div class="slide-left">
+                                    <a href="#" title="图片信息3" ><img src="images/slide-3.jpg"  alt="Slide 3"/></a>
+                                    </div>
+                                    <div class="slide-right">
+                                    	<div class="hotinfo-tit">图片信息3</div>
+                                		<div class="hotinfo-desc">延迟对象（Deferred Object，jQuery.Deferred对象）是一个可链接的（chainable）实用工具对象，实现了Promise接口，可以在回调队列中注册多个回调、调用回调队列并转发任何同步/异步函数的成败状态...</div>
+                                    	<div class="hotinfo-item clearfix">
+                                        <div class="author clearfix">
+                                            <img class="left" src="images/person_09.gif"/>
+                                            <p class="author p-color"><a href="" >阿凡达</a></p>
+                                            <p class="pubtime">2015-09-11 19:26</p>
+                                        </div>
+                                        <div class="hotinfo-link"><a class="button">阅读详情<img src="images/double-arrow.gif" class="doublearrow"/></a></div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="prev"></a>
+                            <a href="#" class="next"></a>
+                        </div>
+           		    </div>
+        <div id="frame_javascript">
+			<div id="data_javascript">
+				<!--[if IE 6]>   
+				<script src="javascript/DD_belatedPNG.js" mce_src="javascript/DD_belatedPNG.js"></script>   
+				<script type="text/javascript">
+				DD_belatedPNG.fix('.png,i');
+                DD_belatedPNG.fix('.slide-right img,.slide-left img,.caption,.prev,.next,a.button img');  
+				</script> 
+				<![endif]--> 
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
