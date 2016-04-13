@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>获取图像颜色</title>
+<style>
+body {
+	text-align:center;
+}
+.info {
+	text-align:center;
+	font-size:36px;
+	line-height:36px;
+}
+#cursor{
+	position:absolute;
+	display:none;
+	height:11px;
+	width:11px;
+	background:url(images/cursor.png);
+}
+</style>
+</head>
+
+<body>
+<canvas id="canvas" width="400px" height="286px">Sorry, your browser dose not support canvas.</canvas>
+<hr />
+<div class="info" id="currentColor">点击上面的canvas来查看效果</div>
+<div id="cursor"></div>
+
+<script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+<script src="getcanvaspixelcolor.js" type="text/javascript"></script>
+<script type="text/javascript">
+var draw = function(img) {
+	var canvas = document.getElementById("canvas");
+	var context = canvas.getContext("2d");
+	context.shadowBlur = 20;
+	context.shadowColor = "#000000";
+	context.drawImage(img, 0, 0);
+
+	canvas = $("#canvas");
+	canvas.click(function (e) {
+		var canvasOffset = canvas.offset();
+		var canvasX = Math.floor(e.pageX - canvasOffset.left);
+		var canvasY = Math.floor(e.pageY - canvasOffset.top);
+		var colorData = document.getElementById("canvas").getPixelColor(canvasX, canvasY);
+		// 获取该点像素的数据
+		console.log(colorData);
+		var color = colorData.rgba;
+		$("body").css("backgroundColor", color);
+		$("#currentColor").html("当前像素(" + canvasX + "," + canvasY + ")颜色为: " + color);
+		var cursorX = (e.pageX - 5) + "px";
+		var cursorY = (e.pageY - 5) + "px";
+		$("#cursor").stop(true, true).css({
+			"display" : "inline-block",
+			"left" : cursorX,
+			"top" : cursorY
+		}).fadeOut(2500);
+	});
+}
+$(document).ready(function () {
+	var img = new Image();
+	img.src = "images/demo.jpg";
+	$(img).load(function () {
+		draw(img);
+	});
+});
+</script>
+</body>
+</html>
