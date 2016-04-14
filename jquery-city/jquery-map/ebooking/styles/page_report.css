@@ -1,0 +1,153 @@
+/**
+ *
+ * @Theme   eBooking report
+ * @Time    2014-07-6
+ *
+ */
+
+
+/*spirit start*/
+.sec-tools .icon-warn,
+.sec-hotel .icon-bell,
+.sec-compete .ui-list .btn-remove,
+.sec-compete .ui-list .btn-append{background:url(../images/v2_base.png) no-repeat;}
+/*spirit end*/
+
+/*report start*/
+
+/*box tools*/
+.sec-tools{padding-bottom:15px;}
+.sec-tools .btn-down{float:right;}
+.sec-tools .btn-query{float:left; background-color:#f07d66;}
+.sec-tools .btn-query:hover{background-color:#ef6245;}
+.sec-tools .ui-label{float:left; margin-right:10px; line-height:32px; color:#666;}
+.sec-tools .ui-text{line-height:32px; color:#666; font-size:14px;}
+.sec-tools .text-ini, .sec-tools .select-ini{height:20px; padding:4px; line-height:22px; color:#666; border:1px solid #d9dcde; background-color:#fff;}
+.sec-tools .select-ini{height:32px;}
+.sec-tools .checkbox{vertical-align:-2px;}
+.sec-tools .icon-warn{display:inline-block; width:16px; height:16px; margin-right:10px; vertical-align:middle; background-position:-85px 0;}
+.sec-query .ui-filter{width:120px;}
+
+/*info*/
+.sec-info{margin-bottom:15px; color:#666;}
+.sec-info .ui-info, .sec-info .ui-msg{line-height:24px; overflow:hidden;}
+.sec-info .ui-info em{font-style:normal; color:#333;}
+.sec-info .ui-info strong{color:#ec7259; font-size:16px;}
+.sec-info .ui-msg{color:#a6a6a6;}
+.sec-info .ui-msg .date{float:right;}
+
+/*ranking*/
+.table-ranking .ui-rank{width:100px;}
+.table-ranking .ui-hotel{text-align:left;}
+.table-ranking .ui-sort, .table-ranking .ui-number{font-weight:bold; font-size:14px; font-family:"Tahoma";}
+.table-ranking .ui-sort{display:inline-block; width:26px; height:26px; line-height:26px; color:#fff; border-radius:13px; background-color:#ef6245;}
+.table-ranking .ui-number{color:#ef6245; font-family:"Georgia";}
+.table-ranking .ui-tag{display:inline-block; height:18px; margin-left:20px; padding:0 10px; line-height:18px; color:#fff; border-radius:9px;}
+.table-ranking .ui-pink{background-color:#ef6245;}
+.table-ranking .ui-blue{background-color:#2b3541;}
+
+
+/*spread*/
+.sec-spread{padding:40px 0;}
+.sec-spread .ui-map{position:relative; float:left; width:700px; overflow:hidden;}
+.sec-spread .ui-map .map-msg1{position:absolute; left:100px; bottom:0;}
+.sec-spread .ui-map .map-msg2{position:absolute; right:0; bottom:0;}
+.sec-spread .ui-query{float:left; width:370px; padding-left:50px;}
+.sec-spread .ui-query .query-tool{margin-bottom:30px;}
+.sec-spread .ui-query .ui-filter{float:left; width:120px; margin-right:10px;}
+.sec-spread .ui-query .btn-query{float:left; background-color:#f07d66;}
+.sec-spread .ui-query .btn-query:hover{background-color:#ef6245;}
+.sec-spread .ui-query p{margin-bottom:10px; line-height:22px; color:#666;}
+
+/*room*/
+.sec-room{position:relative; padding:20px 0; background-color:#fff;}
+.sec-room .room-modify{position:absolute; right:0; top:10px; cursor:pointer; z-index:80; width:300px;}
+.sec-room .room-modify a{text-decoration:underline;}
+
+.sec-room .room-tool{position:absolute; top:10px; right:0px; z-index:100; width:270px; padding:0;}
+.sec-room .room-tool .btn-submit{width:50px; padding:0;}
+
+/*yield*/
+.sec-yield .ui-tab{height:36px; margin-bottom:40px; text-align:center; border-bottom:1px solid #19b4ee;}
+.sec-yield .box-tab{display:inline-block;}
+.sec-yield .box-tab{*display:inline;}
+.sec-yield .ui-tab a{float:left; width:200px; height:35px; margin:0 5px; line-height:34px; color:#999; border-radius:3px 3px 0 0; border:1px solid #c6c6c6; border-bottom:none; background-color:#f1f2f7;}
+.sec-yield .ui-tab a:hover{text-decoration:none; color:#09c;}
+.sec-yield .ui-tab .tab-current{height:33px; color:#09c; border-top-width:4px; border-color:#19b4ee;}
+
+.sec-chart{text-align:center; margin-bottom:40px;}
+
+.table-data{text-align:center;}
+.table-data strong{color:#333; font-size:14px; font-weight:normal;}
+
+/*funds*/
+.sec-funds dl{margin-bottom:10px;}
+.sec-funds dl strong{color:#ec7259; font-size:16px;}
+.sec-funds dt, .sec-funds dd{line-height:24px;}
+.sec-funds dt{font-size:14px; font-weight:bold;}
+.sec-funds dd{color:#666;}
+.sec-funds .table-data{margin-bottom:40px;}
+
+/*data*/
+.sec-data{margin-bottom:15px; overflow:hidden;}
+
+/*no data*/
+.sec-nodata{padding:50px 0; text-align:center; color:#666; font-size:14px; background-color:#fff;}
+
+/*popup*/
+.popup-mid{width:550px; display:none;}
+
+.sec-popup .sec-tools{padding:20px 30px; color:#666;}
+.sec-popup .sec-tools .text-max{width:220px;}
+.sec-popup .sec-tools .btn-query{float:none;}
+#divcompetitors{overflow: hidden; position: fixed; z-index:310; position:absolute;left:40%;top:35%; margin-top:-150px;margin-left:-175px;}
+
+.sec-hotel{height:400px; overflow-y:auto;}
+.sec-hotel .table-hotel{*width:98%; background-color:#f5f6fa;}
+.sec-hotel .btn-select{height:22px; line-height:22px; font-size:12px;}
+.sec-hotel .icon-bell{display:inline-block; width:14px; height:15px; background-position:-135px 0;}
+
+.sec-compete .box-msg{padding:30px; color:#999; text-align:center;}
+.sec-compete .box-bg-gray{background-color:#f5f6fa;}
+.sec-compete .text{width:50%; height:22px; padding:4px; border:1px solid #d9dcde;}
+.sec-compete .compete-title{padding:8px 0; color:#999;}
+.sec-compete .ui-list li{position:relative; height:34px; line-height:34px; padding-right:25px; color:#666; font-size:14px; border-bottom:1px dashed #666; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.sec-compete .ui-list a{color:#666;}
+.sec-compete .ui-list .btn-remove, .sec-compete .ui-list .btn-append{position:absolute; top:8px; right:0; cursor:pointer; width:17px; height:17px;}
+.sec-compete .ui-list .btn-remove{background-position:-85px -25px;}
+.sec-compete .ui-list .btn-append{background-position:-85px -50px;}
+.sec-compete dl{border:1px solid #19b4ee;}
+.sec-compete dl dt{height:38px; padding:0 10px; line-height:38px; color:#666; font-size:14px; border-bottom:1px solid #19b4ee;}
+.sec-compete dl dd{padding:10px;}
+
+.containerchart{height:400px}
+
+/*report end*/
+
+/*ranking*/
+.table-ranking .ui-rank{width:100px;}
+.table-ranking .ui-hotel{text-align:left;}
+.table-ranking .ui-sort, .table-ranking .ui-number{font-weight:bold; font-size:14px; font-family:"Tahoma";}
+.table-ranking .ui-sort{display:inline-block; width:26px; height:26px; line-height:26px; color:#fff; border-radius:13px; background-color:#ef6245;}
+.table-ranking .ui-number{color:#ef6245; font-family:"Georgia";}
+.table-ranking .ui-tag{display:inline-block; height:18px; margin-left:20px; padding:0 10px; line-height:18px; color:#fff; border-radius:9px;}
+.table-ranking .ui-pink{background-color:#ef6245;}
+.table-ranking .ui-blue{background-color:#2b3541;}
+.popup-quiz{width: 600px; padding: 10px;}
+ .note{color: #FFF; font-size: 12px; font-weight: normal;}
+ .inf{color:#737373;font-weight:normal;font-size:12px;}
+.quiz-title{font: 20px microsoft yahei;color: white;background-color: #0AA9E4;height: 53px;text-align: center;padding-top: 10px;}
+.quiz-box{background: #F1F2F7; margin-top:17px;  height: 670px; overflow: auto; }
+.quiz-sec{margin: 20px 10px 10px 10px;}
+.quiz-sec .quiz{font-size: 14px; font-weight: bold; padding: 6px 0;}
+.quiz-sec .answer label{display: inline-block; width: 274px; margin: 6px 0;}
+.quiz-sec .answer input[type="checkbox"]{margin-right: 6px; vertical-align: -2px;}
+.quiz-sec .thr-cols label{width: 180px;}
+.quiz-sec .answer input[type="text"]{width: 510px; padding: 4px;}
+.quiz-sec .sigle-col input[type="text"]{width: 546px;}
+.submit-box{text-align: center; margin: 10px 0; font-weight: bold;}
+
+.answer p{
+    margin-top:5px;
+}
+/*ranking end*/
