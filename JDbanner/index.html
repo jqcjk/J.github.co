@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<link href="" rel="stylesheet">
+		<style>#ul_container { width: 1920px; height: 583px; overflow: hidden; position:relative;background: url(images/564483fcNaf5ee88c.jpg)left top no-repeat;  }
+#ul_container li { position: absolute; list-style: none; }
+.pic-zaijian {z-index:3;  left: 702px;top: 54px;width:511px;height:522px;}
+.pic-yhao {z-index:2;left: 950px; top: 105px;width:322px;height:104px;}
+.pic-11y {z-index:4;  left: 680px; top:358px;width:269px;height:148px;}
+.pic-joy {z-index:5;  left: 946px; top: 181px;width:315px;height:283px;}
+.pic-light {z-index:6;  left: 0x; top: 0px;width:1713px;height:539px;}
+</style>
+</head>
+<body>
+<div class="header-animate" style="position:relative;width:1920px;height:583px; margin: 0 auto;"> 
+ <ul id="ul_container"> 
+  <li class="pic-zaijian" style="z-index: 3;"><img class="J_imgLazyload" src="images/5644025cN28d8a58c.png" alt="" /></li> 
+  <li class="pic-yhao" style="z-index: 2;"><img class="J_imgLazyload" src="images/5644025cN8cd82f47.png" alt="" /></li> 
+  <li class="pic-11y" style="z-index: 4;"><img class="J_imgLazyload" src="images/56440ff7N8104ff46.png" alt="" /></li> 
+  <li class="pic-joy" style="z-index: 5;"><img class="J_imgLazyload" src="images/5644369dN2177d534.png" alt="" /></li> 
+  <li class="pic-light" style="z-index: 6;"><img class="J_imgLazyload" src="images/564409feN8fc5ae9f.png" alt="" /></li> 
+ </ul>
+</div>
+<script>
+$(function(){
+	var oUl=document.getElementById('ul_container'),
+		l = oUl.offsetWidth/2,
+		t = oUl.offsetHeight/2,
+		aLi=document.getElementsByTagName('li');
+	oUl.onmousemove = function( ev ){
+		var oEv = ev || event,
+			iL = oEv.clientX,
+			iT = oEv.clientY;
+
+		for(var i=0; i<aLi.length; i++){
+			aLi[i].style.marginLeft=(iL - l )/100*aLi[i].style.zIndex+'px';
+			aLi[i].style.marginTop=(iT - t )/70*aLi[i].style.zIndex+'px';
+		}
+	}
+	
+});
+</script>
+</body>
+</html>
