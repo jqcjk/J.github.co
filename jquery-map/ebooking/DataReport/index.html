@@ -1,0 +1,560 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head id="ctl00_ctl00_Head1"><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+    Ebooking 酒店管理系统
+</title><link href="../styles/basis.css?v=1" rel="stylesheet" type="text/css" /><link href="../styles/basis_v3.css?v=1" rel="stylesheet" /><link href="../styles/header_v3.css" rel="stylesheet" /><link href="../styles/home_v3.css" rel="stylesheet" /><link href="../styles/page_pub.css?v=2" rel="stylesheet" type="text/css" />
+
+  
+
+    <script src="/eBooking/JS/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        (function ($) {
+            $(function () {
+                $("#multiLanguage").bind("click", function (event) {
+                    var contianer = $(this);
+                    var optionsLang = $("#multiOptions");
+                    if (optionsLang.is(":hidden")) {
+                        $("#ddlIcon").removeClass("icon-fold");
+
+                        //配合css样式
+                        if (!contianer.hasClass("ui-lang"))
+                            contianer.addClass("ui-lang");
+
+                        if (!$("#ddlIcon").hasClass("icon-unfold"))
+                            $("#ddlIcon").addClass("icon-unfold");
+
+                        optionsLang.show();
+                    }
+                    else {
+                        $("#ddlIcon").removeClass("icon-unfold");
+                        contianer.removeClass("ui-lang");
+                        if (!$("#ddlIcon").hasClass("icon-fold"))
+                            $("#ddlIcon").addClass("icon-fold");
+
+                        optionsLang.hide();
+                    }
+                    event.stopPropagation();
+                });
+
+                $(document).unbind("click");
+                $(document).bind("click", function (e) {
+                    $("#multiOptions").hide();
+                    $("#multiLanguage").removeClass("ui-lang");
+
+                    $("#ddlIcon").removeClass("icon-unfold");
+                    if (!$("#ddlIcon").hasClass("icon-fold"))
+                        $("#ddlIcon").addClass("icon-fold");
+                });
+
+            });
+        })(jQuery);
+    </script>
+    <script src="/eBooking/JS/bfa.js" type="text/javascript"></script>
+    <script src="/eBooking/JS/grabMasterPage.js" type="text/javascript"></script>
+    <script src="/eBooking/JS/Tool.js?v=2" type="text/javascript"></script>
+    <script src="/eBooking/Entry/JS/Pager.js" type="text/javascript"></script>
+    <script src="/eBooking/JS/showHelpVideo.js" type="text/javascript"></script>
+    
+    <link href="../styles/page_report.css" rel="stylesheet" type="text/css" />
+ 
+
+    <script>
+        function RemoveCookie() {
+            window.tl.DelCookie(document.getElementById("priceKey").value);
+            window.tl.DelCookie(document.getElementById("orderKey").value);
+            window.tl.DelCookie(document.getElementById("statusKey").value);
+        }
+    </script>
+</head>
+<body>
+    <form name="aspnetForm" method="post" action="CustomerPosition.aspx" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTEzNTIzNDYzMzgPZBYCZg9kFgJmD2QWAgIBD2QWMAIBDw8WAh4EVGV4dAUyPGkgY2xhc3M9J2ViazMtaWNvIGhlYW5kZXItY24nPjwvaT4mbmJzcDvnroDkvZPniYhkZAICDxYCHglpbm5lcmh0bWwFMTxpIGNsYXNzPSdlYmszLWljbyBoZWFuZGVyLXVzYSc+PC9pPiZuYnNwO0VuZ2xpc2hkAgMPFgIfAQUzPGkgY2xhc3M9J2ViazMtaWNvIGhlYW5kZXItanBuJz48L2k+Jm5ic3A75pel5pys6KqeZAIEDxYCHwEFMjxpIGNsYXNzPSdlYmszLWljbyBoZWFuZGVyLWtyJz48L2k+Jm5ic3A77ZWc6rWt7Ja0ZAIFDw8WAh8ABQnlvKDpuY/po55kZAIHDxYCHgRocmVmBS9odHRwczovL2Vib29raW5nLmN0cmlwLmNvbS9lYm9va2luZy9sb2dvdXQuYXNweGQCCA8PFgIfAAUe6Z2S5bKb5rW35aSn5a2m5pyv5Lqk5rWB5Lit5b+DZGQCCQ8PFgIfAGVkZAIPDxYCHwIFLGh0dHA6Ly9lYm9va2luZy5jdHJpcC5jb20vZWJvb2tpbmcvaG9tZS5hc3B4ZAIQDxYCHgdWaXNpYmxlZ2QCEQ8WAh8DZ2QCEg8WAh8DZ2QCEw8WAh8DaGQCFA8WAh8DZxYCZg8WAh8CBTZodHRwOi8vZWJvb2tpbmcuY3RyaXAuY29tL2FjY2VCb29raW5nL2F1ZGl0L2luZGV4LmFzcHhkAhUPFgIfA2cWAmYPFgIfAgVQaHR0cDovL2Vib29raW5nLmN0cmlwLmNvbS9BY2NvdW50LVZlbmRvci1TZXR0bGVtZW50SG90ZWxCb29raW5nV2ViL0VudGVyV2F5LmFzcHhkAhYPFgIfA2cWAmYPFgIfAgUmL2Vib29raW5nL0RhdGFSZXBvcnQvUmVkaXJlY3RQYWdlLmFzcHhkAhcPFgIfA2dkAhgPFgIfA2cWAmYPFgIfAgVFaHR0cDovL2Vib29raW5nLmN0cmlwLmNvbS9lYm9va2luZy9lbnRyeS9pbmRleC5hc3B4P25hbWU9cHJvcGVydHlpbmZvZAIZDxYCHwNnFgJmDxYCHwIFI2h0dHA6Ly9nc2guY3RyaXAuY29tL0dCSy9JbmRleC5hc3B4ZAIaD2QWAgIBDxYCHwNoZAIgDxYCHwNnZAIhDxYCHwNnZAIiDxYCHwNoFgICAQ9kFgYCAQ8WAh8CBR4vZWJvb2tpbmcvb3JkZXIvb3JkZXJsaXN0LmFzcHhkAgMPFgIfAgVQaHR0cDovL2Vib29raW5nLmN0cmlwLmNvbS9BY2NvdW50LVZlbmRvci1TZXR0bGVtZW50SG90ZWxCb29raW5nV2ViL0VudGVyV2F5LmFzcHhkAgUPFgIfAgVFaHR0cDovL2Vib29raW5nLmN0cmlwLmNvbS9lYm9va2luZy9lbnRyeS9pbmRleC5hc3B4P25hbWU9cHJvcGVydHlpbmZvZAIjDxYCHwIFHi9lYm9va2luZy9vcmRlci9vcmRlcmxpc3QuYXNweGRkNuAaTL3XtabQoPQe374S0/Nc/XsKDdMIeSSYXeULKpk=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+        
+          
+         <div class="ebk3-main-header">
+            <div class="ebk3-main-header-cont clearfix">
+                <i class="ebk3-ico ebk3-ico-logo"></i>
+                <div class="header-account">
+                    
+                    <!-- 这里朝上的箭头为 ebk3-ico-white-arrUp -->
+                    <span href="javascript:" class="header-ebkOpreation" id="spAccInfo">账号信息<i class="ebk3-ico ebk3-ico-white-arrDown"></i>
+                        <span class="header-ebkOpreation-select" id="sAcountInfo" data-bind="foreach: AccountInfo" style="display: none;">
+                            <a class="ebk3-simple-btn" href="javascript:" data-bind="attr: { href: Title, target: FileUrl, id: CreaterMan }, text: Content"></a>
+                        </span>
+                    </span>
+                    <a href="/ebooking/Other/Password.aspx" class="header-ebkOpreation"title="修改密码">修改密码</a>
+                    <a href="/ebooking/User/UserList.aspx" id="ctl00_ctl00_UserSet" class="header-ebkOpreation" title="用户设置">用户设置</a>
+                    <a href="/ebooking/HelpCenter/HomePage.aspx" class="header-ebkOpreation" id="helperCenter" title="帮助中心">帮助中心</a>
+
+                    <span href="javascript:" class="header-ebkOpreation" id="swichLanguage"> 
+                        <span id="ctl00_ctl00_lblCurentLanguage"><i class='ebk3-ico heander-cn'></i>&nbsp;简体版</span><i id="arrow" class="ebk3-ico ebk3-ico-white-arrDown"></i>
+                <span class="header-ebkOpreation-select" id="languageContainer" style="display:none;">
+                    <a id="ctl00_ctl00_lblLanguage1" class="ebk3-simple-btn" href="javascript:__doPostBack(&#39;ctl00$ctl00$lblLanguage1&#39;,&#39;&#39;)"><i class='ebk3-ico heander-usa'></i>&nbsp;English</a>
+                    <a id="ctl00_ctl00_lblLanguage2" class="ebk3-simple-btn" href="javascript:__doPostBack(&#39;ctl00$ctl00$lblLanguage2&#39;,&#39;&#39;)"><i class='ebk3-ico heander-jpn'></i>&nbsp;日本語</a>
+                    <a id="ctl00_ctl00_lblLanguage3" class="ebk3-simple-btn" href="javascript:__doPostBack(&#39;ctl00$ctl00$lblLanguage3&#39;,&#39;&#39;)"><i class='ebk3-ico heander-kr'></i>&nbsp;한국어</a>
+                </span>
+            </span>
+                    <div class="accountOpreation">
+                        <span>欢迎您，<span id="xxx"></span><span id="ctl00_ctl00_lblUserName">张鹏飞</span>&nbsp;
+                            </span>
+                        <a id="ctl00_ctl00_logout" class="ebk3-simple-btn" onclick="RemoveCookie();" href="javascript:__doPostBack(&#39;ctl00$ctl00$logout&#39;,&#39;&#39;)">[退出]</a>
+                    </div>
+                </div>
+                <div class="header-hoteInfo">
+                   <h5 class="hoteInfo-name"><a class="ebk3-simpleBtn"  href="http://hotels.ctrip.com/hotel/74117.html#ctm_ref=chp_htl_3_n" target="_blank">   
+                        <span id="lblHotelName" class="ui-name">青岛海大学术交流中心</span></a></h5>
+                     
+                     
+                    
+                    
+                </div>
+                    <input type="hidden" name="ctl00$ctl00$hfHotelId" id="hfHotelId" />
+                <input type="hidden" name="ctl00$ctl00$hfHasPoints" id="hfHasPoints" />
+                
+                        <input type="hidden" name="ctl00$ctl00$hfPointsUrl" id="hfPointsUrl" />
+            </div>
+            <div class="ebk3-main-header-container" id="mainMenu">
+                <div class="ebk3-main-header-nav">
+                    <div class="header-nav-list-container">
+                        <div id="menuContainer" class="header-nav-list">
+                            <div class="header-nav-item" id="sy" data-categary="home"><a href="http://ebooking.ctrip.com/ebooking/home.aspx" id="ctl00_ctl00_homePage" class="header-nav-fa">首页</a></div>
+                            <div id="ctl00_ctl00_ddcl" class="header-nav-item" data-categary="orderpage">
+                                <a id="orderProcess" data-categary="OrderList" class="header-nav-fa" href="/ebooking/Order/OrderList.aspx">订单处理
+                                    <span class="header-subNav-nbsp"></span>
+                                </a>
+                            </div>
+                            <div id="ctl00_ctl00_ftwh" class="header-nav-item" data-categary="roomstatuspage"><a id="roomStatus" class="header-nav-fa" href="/ebooking/RoomStatus/RoomStatusManagement.aspx" data-categary="RoomStatusManagement">房态维护</a></div>
+                            <div id="ctl00_ctl00_fjzc" class="header-nav-item" data-categary="roompricepage"><a id="roomPrice" class="header-nav-fa" href="/ebooking/RoomPrice/RoomPriceChange.aspx">房价维护</a></div>
+                            
+                            <div id="ctl00_ctl00_zdsh" class="header-nav-item" data-categary="auditpage"><a href="http://ebooking.ctrip.com/acceBooking/audit/index.aspx" id="ctl00_ctl00_audit" class="header-nav-fa">住店审核</a></div>
+                            <div id="ctl00_ctl00_cwjs" class="header-nav-item" data-categary="financepage"><a href="http://ebooking.ctrip.com/Account-Vendor-SettlementHotelBookingWeb/EnterWay.aspx" id="ctl00_ctl00_finance" class="header-nav-fa">财务结算</a></div>
+                            <div id="ctl00_ctl00_sjbb" class="header-nav-item" data-categary="goldenpage"><a href="/ebooking/DataReport/RedirectPage.aspx" id="ctl00_ctl00_statistics" class="header-nav-fa">黄金罗盘</a></div>
+                            <div id="ctl00_ctl00_dpgl" class="header-nav-item" data-categary="commentpage"><a id="commentManagement" class="header-nav-fa" href="/ebooking/CommentPage/commentList.aspx">点评管理</a></div>
+                            <div id="ctl00_ctl00_xxwh" class="header-nav-item" data-categary="propertypage"><a href="http://ebooking.ctrip.com/ebooking/entry/index.aspx?name=propertyinfo" id="ctl00_ctl00_propertyInfo" class="header-nav-fa">信息维护</a></div>
+                            <div id="ctl00_ctl00_aGroupon" class="header-nav-item"><a href="http://gsh.ctrip.com/GBK/Index.aspx" id="ctl00_ctl00_group" class="header-nav-fa">团购</a></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                
+      <div id="id="id_Menu_two"" class="header-subNav" data-categary="goldenpage" style="display:block;">
+                                    <div class="header-subNav-container">
+                                <div class="header-subNav-list" style="margin-left:100px;">
+                                    
+                                    <div class="header-subNav-item">
+                                        <a href="FeedbackReport.aspx" data-pagename="feedbackreport" id="xx">信息<i id="xxi"></i></a> </div>
+                                    <div class="header-subNav-item"><a href="HotelProduction.aspx" data-pagename="hotelproduction" id="cl">产量<i id="cli"></i></a> </div>
+                                    <div class="header-subNav-item"> <a href="HotelPricesTrend.aspx" data-pagename="hotelpricestrend" id="jg">价格<i id="jgi"></i></a></div>
+                                    <div class="header-subNav-item"><a href="Commission.aspx" data-pagename="commission" id="yj">佣金<i id="yji"></i></a> </div>
+                                    <div class="header-subNav-item"><a href="HotelResource.aspx" data-pagename="hotelresource" id="fy">房源<i id="fyi"></i></a>  </div>
+                                    <div class="header-subNav-item"><a href="CustomerPosition.aspx" data-pagename="customerposition" id="kh">客户<i id="khi"></i></a> </div>
+                                </div>
+                            </div>
+    </div>
+
+
+
+            </div>
+        </div>
+
+    <div class="box-1180">
+        
+            
+    <script src="../JS/jquery-1.7.1.min.js" type="text/javascript"></script>
+
+
+    <script src="../JS/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="../JS/Tool.js?v=3"  type="text/javascript"></script>
+    <script src="../JS/dropdownlist.js" type="text/javascript"></script>
+    <script src="../JS/raphael-min.js" type="text/javascript"></script>
+    <script src="../JS/map.js" type="text/javascript"></script>
+    
+
+    <script type="text/javascript">
+
+        var $jQuery = jQuery.noConflict(); // 解除 jQuery $ 的定义
+
+        $jQuery("#kh").addClass("sub-current");
+        $jQuery("#khi").addClass("icon-arrow");
+
+        $jQuery(function () {
+            ChooseNoDataPicture();
+            SearchOrder();
+        });
+
+       
+    </script>
+
+<div class="sub-menu">
+        <div class="box-submenu clearfix">
+            <a href="CustomerPosition.aspx" id="ctl00_ctl00_SubMenuContainer_ContentMain_hotelpro" class="menu-current">客户分布</a>
+            <a href="Customer.aspx" id="ctl00_ctl00_SubMenuContainer_ContentMain_roomlpro">预订习惯</a>     
+            <input name="ctl00$ctl00$SubMenuContainer$ContentMain$changedhref" type="hidden" id="ctl00_ctl00_SubMenuContainer_ContentMain_changedhref" />
+        </div>
+</div>
+
+<div class="container">
+            <div class="sec-spread clearfix">
+                <div class="ui-map">
+                <div id="map_container"></div>
+
+                <div class="map-msg1" id="img1">高 &nbsp;
+                <img src="../images/v2_pic3.png" align="center" />
+                &nbsp; 低</div>
+                
+                <div class="map-msg2" id="img2"><img src="../images/v2_pic2.png" /></div>
+                <img src="../images/zzz_map.jpg" id="noData" style="display:none;" />
+                </div>
+                <div class="ui-query">
+                    <div class="query-tool clearfix">
+                        <div id="dateContainer"></div>
+                        <button type="button" id="search" class="btn btn-query">查询</button>
+                    </div>
+                    <p>本图按客户来源省区展示每月实际入住客户产生的间夜量。</p>
+                    <p>根据酒店客户入住间夜数量在区域分布情况的具体数值，客户数量入住间夜数越多的在图中颜色越深，客户数量入住间夜数越少的在图中颜色越淡。</p>
+                    <p>鼠标移上地图，将显示来自相应省区的用户当月产生的间夜量的具体数据。</p>
+                </div>
+            </div>
+
+            <div class="sec-tools clearfix">
+            <a id="ctl00_ctl00_SubMenuContainer_ContentMain_DownData" class="btn btn-down" href="javascript:__doPostBack(&#39;ctl00$ctl00$SubMenuContainer$ContentMain$DownData&#39;,&#39;&#39;)">下载此报表</a>
+                <p class="ui-text"></p>
+            </div>
+
+            <table id="provinceSort" class="ui-table table-ranking">
+                <tbody>
+                
+            </tbody></table>
+
+            <div class="sec-nodata" id="noProvinceData" style="display:none;">暂无数据</div>
+             <input type="hidden" name="ctl00$ctl00$SubMenuContainer$ContentMain$ref_year" id="ctl00_ctl00_SubMenuContainer_ContentMain_ref_year" />
+              <input type="hidden" name="ctl00$ctl00$SubMenuContainer$ContentMain$ref_month" id="ctl00_ctl00_SubMenuContainer_ContentMain_ref_month" />
+              <input type="hidden" name="ctl00$ctl00$SubMenuContainer$ContentMain$year_text" id="ctl00_ctl00_SubMenuContainer_ContentMain_year_text" />
+              <input type="hidden" name="ctl00$ctl00$SubMenuContainer$ContentMain$month_text" id="ctl00_ctl00_SubMenuContainer_ContentMain_month_text" />
+              <input type='hidden' id="languageType" value="SimpChinese" />
+        </div>
+        <input type='hidden' id="page_id" value="800096" />
+        <script type="text/javascript">
+            var $ = $jQuery;
+
+            var op = { options: ["2014年", "2015年"], selectedValue: "2015年" };
+
+            var ddlYear = new dropdownlist(op);
+            ddlYear.placeAt($("#dateContainer"));
+
+            var opMonth = { options:
+            ["1月",
+             "2月",
+             "3月",
+             "4月",
+             "5月",
+             "6月",
+             "7月",
+             "8月",
+             "9月",
+             "10月",
+             "11月", 
+             "12月"]
+
+            };
+            opMonth.selectedValue = opMonth.options["9" - 1];
+
+            var ddlMonth = new dropdownlist(opMonth);
+            ddlMonth.placeAt($("#dateContainer"));
+            $jQuery = $;
+
+            jQuery("#search").bind("click", function () {
+                SearchOrder();
+            });
+
+            function SearchOrder() {
+
+                //ie7 不支持 array.indexof方法，所以使用jQuery的实现
+                var month = $.inArray(ddlMonth.val(), opMonth.options) + 1;
+                var year;
+                if ($.inArray(ddlYear.val(),op.options) == 0) {
+                    year = "2014";
+                }
+                else {
+                    year = "2015";
+                }
+                document.getElementById("ctl00_ctl00_SubMenuContainer_ContentMain_ref_year").value = year;
+                document.getElementById("ctl00_ctl00_SubMenuContainer_ContentMain_ref_month").value = month;
+                document.getElementById("ctl00_ctl00_SubMenuContainer_ContentMain_year_text").value = ddlYear.val();
+                document.getElementById("ctl00_ctl00_SubMenuContainer_ContentMain_month_text").value = ddlMonth.val();
+
+                $jQuery.ajax({
+                    url: "ajaxs/DrawMapAjax.ashx",
+                    data: { 'hotel': '74117', 'year': year, 'month': month, "Method": "GetCustomerPosition" },
+                    contentType: "text/plain; charset=utf-8",
+                    dataType: "json",
+                    error: function (msg) {
+                        jQuery("table#provinceSort").hide();
+                        jQuery("#img1").hide();
+                        jQuery("#img2").hide();
+                        jQuery("#noProvinceData").show();
+                        document.getElementById("map_container").innerHTML = "";
+                        //                    document.getElementById("map_line").style.display = "none";
+                        //                    document.getElementById("map_nanhai").style.display = "none";
+                        if (document.getElementById("noData") != null)
+                            document.getElementById("noData").style.display = "";
+
+
+                    },
+                    success: function (msg) {
+                        if (msg == null || msg.allProvinces == null) {
+                            jQuery("table#provinceSort").hide();
+                            jQuery("#img1").hide();
+                            jQuery("#img2").hide();
+                            jQuery("#noProvinceData").show();
+                            document.getElementById("map_container").innerHTML = "";
+                            //                    document.getElementById("map_line").style.display = "none";
+                            //                    document.getElementById("map_nanhai").style.display = "none";
+                            if (document.getElementById("noData") != null)
+                                document.getElementById("noData").style.display = "";
+
+                        }
+                        else {
+                            var allProvinces = msg.allProvinces;
+                            document.getElementById("map_container").innerHTML = "";
+                            jQuery("#img1").show();
+                            jQuery("#img2").show();
+                            if (document.getElementById("noData") != null)
+                                document.getElementById("noData").style.display = "none";
+                            if (jQuery("#noProvinceData") != null)
+                                jQuery("#noProvinceData").hide();
+
+                            jQuery("table#provinceSort").show();
+
+                            var obj1 = eval('(' + allProvinces[0].colorString + ')');
+                            var defaultColor = "#C9E9F7";
+                            var data = obj1;
+
+                            // 初始化区域
+                            var c = Raphael("map_container", 685, 531);
+                            // 初始化地图
+                            var map = InitializeMap(c, data, defaultColor);
+
+                            // 绘制地图
+                            DrawMap(c, map);
+
+                            var msgData = msg.topProvinces;
+                            jQuery("table#provinceSort tbody").empty();
+                            jQuery("table#provinceSort tbody")
+                                .append(jQuery("<tr><th class='ui-rank'>当前排名</th><th>省份</th><th>间夜量</th><th>比例</th></tr>"));
+                            for (var i = 0, j = msgData.length; i < j; i++) {
+                                var id = i + 1;
+                                jQuery("table#provinceSort tbody")
+                                    .append(jQuery("<tr><td><span class='ui-sort'>" + id + "</span></td><td>" + msgData[i].Province + "</td><td>" +
+                                        msgData[i].Order_Quantiy + "</td><td>" + msgData[i].Order_Rat + "</td></tr>"));
+                            }
+                        }
+                    }
+                });
+            }
+
+
+            function ChooseNoDataPicture() {
+                var languageType = $('#languageType').val();
+
+                if (languageType == 'English') {
+                    $("#noData").attr("src", "../images/zzz_map_en.png");
+                }
+                else if (languageType == 'Japanese') {
+                    $("#noData").attr("src", "../images/zzz_map_jpn.png");
+                }
+                else if (languageType == 'Korean') {
+                    $("#noData").attr("src", "../images/zzz_map_kr.png");
+                }
+                else {
+                    $("#noData").attr("src", "../images/zzz_map.jpg");
+                }
+            }
+        </script>
+
+
+
+            
+
+            <input type="hidden" name="ctl00$ctl00$hfMustSelectAHotel" id="hfMustSelectAHotel" value="T" />
+            <input type="hidden" name="ctl00$ctl00$hfCurrentHotel" id="hfCurrentHotel" value="74117" />
+
+            <!---->
+        <div class="ebk3-side-tool">
+            <div class="side-tool-space"></div>
+            <ul class="tool-list" >
+                <li class="tool-item" id="pointExchange" style="height:90px;" title=''>
+                    
+                </li>
+                <li class="tool-item" title=''>
+                    <a class="tool-item-a" href="javascript:"><i class="ebk3-ico ebk3-ico-side-phone"></i><span class="tool-name">商户APP</span>
+                        <dl class="tool-sublist downloadApp">
+                            <dt>App二维码</dt>
+                            <dd>
+                                <img src="/Ebooking/images/qrcode_android.png" alt="downloadapp"></dd>
+                            <dt>微信公众号</dt>
+                            <dd>
+                                <img src="/Ebooking/images/qrcode_wx.png" alt="wechat"></dd>
+                        </dl>
+                    </a> 
+                </li>
+          <li class="tool-item" style="height:93px;" title=''>
+            <a class="tool-item-a" href="javascript:"><i class="ebk3-ico ebk3-ico-side-call"></i><span class="tool-name">联系我们</span>
+                <dl class="tool-sublist contcatUs" style="">
+                    <div id="ctl00_ctl00_CityMapCompany">
+                    <dt><strong>所属:青岛分公司</strong></dt>
+                    <dd><i class="ebk3-ico ico-side-phone12"></i>0532-85938008<br><i class="ebk3-ico ico-side-time"></i>工作日9:00-18:00</dd>
+                    </div>
+                    <dt><strong>系统服务热线</strong></dt>
+                    <dd><i class="ebk3-ico ico-side-phone12"></i>021-34064880 转 739101<br><i class="ebk3-ico ico-side-time"></i>工作日9:00-18:00</dd>
+                    <dt><strong>房态相关问题咨询</strong></dt>
+                    <dd><i class="ebk3-ico ico-side-phone12"></i>021-52604651<br><i class="ebk3-ico ico-side-time"></i>每天9:00-21:00</dd>
+                    <dt><strong>订单相关问题咨询</strong></dt>
+                    <dd><i class="ebk3-ico ico-side-phone12"></i>10106666<br><i class="ebk3-ico ico-side-time"></i>7*24小时</dd>
+                    <dt><strong>住店审核问题咨询</strong></dt>
+                    <dd><i class="ebk3-ico ico-side-phone12"></i>021-34064880 转 707496<br><i class="ebk3-ico ico-side-time"></i>工作日9:00-18:00</dd>
+                    <dt><strong>对账结算问题咨询</strong></dt>
+                    <dd><i class="ebk3-ico ico-side-phone12"></i>021-34064880 转 707441 <br><i class="ebk3-ico ico-side-time"></i>工作日9:00-18:00</dd>
+                    <dt><strong>审核结算功能咨询QQ</strong></dt>
+                    <dd><i class="ebk3-ico ico-side-qq"></i>3218732391</dd>
+                    <dt><strong>直达邮箱</strong></dt>
+                    <dd><i class="ebk3-ico ico-side-mail"></i>ebooking@ctrip.com</dd>
+                </dl>
+            </a>
+        </li>
+                <li class="tool-item" id="userFeedBack">
+                    <a href="http://www.ctrip.com/QSYS/Online/OnlineQsys.asp?SurveyID=dcbda49b-ef7d-4ba2-acf5-36b00369da12&Language=C" id="ctl00_ctl00_Feedback" class="tool-item-a" target="_blank"><i class="ebk3-ico ebk3-ico-side-feddback"></i><span class="tool-name">用户反馈</span></a>
+                </li>
+            </ul>
+            <div class="tool-item tool-notice">
+                 
+                <!-- 消息弹层 单条消息-->
+                <div class="mod-tool-notice ebk3-modwin ebk3-alert" style="display: none; margin-top: -136px;" id="divAlertOrder">
+                    <a href="javascript:" class="ebk3-close" id="closeAlertOrder">×</a>
+                    <h6 class="ebk3-alert-title">
+                        <strong>未处理订单通知</strong>
+                    </h6>
+                    <div class="ebk3-alert-cont">
+                        亲，您有订单未处理哦！求速来处理订单~
+                    </div>
+                    <div class="ebk3-modwin-handle">
+                         <a href="/ebooking/order/orderlist.aspx" id="ctl00_ctl00_aOrderProcess" class="ebk3-btn ebk3-btn-blue ebk3-btn-mini">处理订单</a>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+            <!---->
+
+            <bgsound id="Player" loop="-1" autostart="true">
+
+        <input type="hidden" id="backValue" />
+        <input type="hidden" id="priceKey" value="0E1784CD20CA6C11" />
+        <input type="hidden" id="orderKey" value="A1CA536DFDC925E6" />
+        <input type="hidden" id="statusKey" value="B2CE5C3DCF563033" />
+        <div id="Music"></div>
+    </div>
+        <script src="/eBooking/JS/MaskShow.js?v=1"></script>
+    
+<div>
+
+    <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdABBgz/B4cruTOTot0AOrbu+qoKVWlyTNrmxC79woIElT6dCO+Dt8mg2jTGQdfGHEsmAtgi9W/9raA9iQAJ4KO2qEvqy69gfjOHSFXciDMyxoh593Ese2qUipRy/Ym3W/ryNGewy2hJJd8QZexaAarO/kpsso1cypIOuJ57IOX9ggxhbM+edsKeSslhQIWM7pYp+FcMabcu1O3Y2g7H2SLgpEKBnxy63ogehus2Ad7H9ufKuc4mMz2XNY0UxFBrB4ulV4dOQFonoXin95/bExBL5daGV3qD351yDzvBlA+ZYet72wc+DOqYeIZBVELGF5yiWAcYQRM3A3PFsIUbcD3oQyY9a/635rrVHpE6G5OoJxusG3geM5cYAoJBYuWslF6vU=" />
+</div></form>
+    <div id="divMaskSelectHotel" class="overLay" style="display: none">
+    </div>
+    <div id="divPopupSelectHotel" class="ebk3-modwin mod-form mod-selectHtl" style="display: none;">
+        <a href="javascript:;" class="ebk3-close" id='aCloseSelectHotel'>×</a>
+        <h6 class="ebk3-modwin-title">选择酒店</h6>
+         <div class="ebk3-modwin-cont">
+             <div class="mod-selectHtl-hd clearfix">
+                    <div class="ebk3-compt-lbText">
+                        <div class="ebk3-compt-lbText-lb">宾馆名称简拼</div>
+                        <div class="ebk3-compt-lbText-cont">
+                            <input type="text" class="ebk3-inText" id="txtPinyinHead" placeholder="">
+                        </div>
+                    </div>
+                    <div class="ebk3-compt-lbText">
+                        <div class="ebk3-compt-lbText-lb">宾馆名称关键字</div>
+                        <div class="ebk3-compt-lbText-cont">
+                            <input type="text" class="ebk3-inText" id="txtHotelName" placeholder="">
+                            <a href="javascript:" class="ebk3-btn ebk3-btn-blue ebk3-btn-mini" id="btQueryHotelList">查询</a>
+                        </div>
+                    </div>
+                </div>
+             <div class="mod-selectHtl-bd">
+                 <div class="sec-hotel" id="divSelectHotel">
+        </div>
+                 <div class="ebk3-pageNav" id="divPagerSelectHotel"  prestr="上一页" nexstr="下一页"
+            tostr="到" pagestr="页" submitstr="确定">
+                        
+                    </div>
+             </div>
+
+             
+         </div>
+    </div>
+    <div class="footer">
+        <p></p>
+    </div>
+    <script type="text/javascript" src="/eBooking/JS/master.js"></script>
+  
+    <script type="text/javascript">
+      
+        window.hostpath = "/eBooking/";
+        window.Languages = new Object();
+        window.Languages["RootMP002"] = "宾馆代号";
+        window.Languages["RootMP003"] = "宾馆名称";
+        window.Languages["PageCommon029"] = "省";
+        window.Languages["PageCommon017"] = "城市";
+        window.Languages["RoomPrice107"] = "房态提醒";
+        window.Languages["RoomPrice134"] = "房价提醒";
+        window.Languages["PageCommon028"] = "选择";
+        window.Languages["Hotel584"] = "所有酒店";
+        window.Languages["Index017"] = "亲，您有订单未处理哦！求速来处理订单~";
+
+        function ShowOrHideHotelSelect() {
+            var currentStyle = document.getElementById("selectHotel").style.display;
+            if (currentStyle == "none") {
+                document.getElementById("selectHotel").style.display = "block";
+                document.getElementById("selectarrow").className = "icon-fold";
+            }
+            else {
+                document.getElementById("selectHotel").style.display = "none";
+                document.getElementById("selectarrow").className = "icon-unfold";
+            }
+        }
+    </script>
+
+    <script src="/eBooking/JS/knockout-3.3.0.js"></script>
+     
+        <script src="/eBooking/JS/newMaster.js?v=1"></script>
+</body>
+</html>
