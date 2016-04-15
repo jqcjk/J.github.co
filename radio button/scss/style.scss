@@ -1,0 +1,93 @@
+body{
+  background: #2a2b30;
+}
+
+
+.menu {
+	width: 300px;
+	height: 200px;
+	margin: 0 auto 100px;
+	position: relative;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+  &-wrapper{
+  position: absolute;
+	left: 50%;
+	bottom: 10px;
+  }
+  &-toggle-button,&-item-bounce,&-item-button{
+    background: #4f4f64;
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	margin-left: -40px;
+	margin-top: -40px;
+	height: 80px;
+	color: #fff;
+	border: none;
+	outline: none;
+	position: relative;
+   
+  }
+  
+  &-toggle-button {
+	background: transparent;
+	position: absolute;
+	top: 0;
+	left: 0;
+   
+}
+  &-toggle-icon {
+	font-size: 30px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 80px;
+	height: 80px;
+	line-height: 80px;
+}
+&-items {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+  &-item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+}
+&-item-bounce {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+  
+  &-item-button {
+	width: 60px;
+	height: 60px;
+	margin-left: -30px;
+	margin-top: -30px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #AD4C4C;
+    .fa{
+      font-size:1.5rem;
+      color:#fff;
+    }
+    .fa-inbox{
+      transform: rotate(182deg);
+    }
+    .fa-reply-all{
+      transform: rotate(-120deg);
+    }
+    .fa-trash{
+      transform: rotate(120deg);
+    }
+}
+}
