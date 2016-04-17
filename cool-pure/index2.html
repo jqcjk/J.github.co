@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,maximum-scale=1">
+	<meta http-equiv="Accept-CH" content="DPR, Width, Viewport-Width">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link rel="stylesheet" media="screen, projection" href="dist/drift-basic.css">
+	<style type="text/css">
+      .wrapper {
+		  margin: 2em auto 0 auto;
+		  width: 600px;
+		}
+
+		.demo-trigger {
+		  display: inline-block;
+		  width: 30%;
+		  float: left;
+		}
+
+		.detail {
+		  position: relative;
+		  width: 65%;
+		  margin-left: 5%;
+		  float: left;
+		}
+
+		p, ul {
+		  max-width: 32em;
+		  margin-bottom: 1em;
+		  line-height: 1.6em;
+		}
+
+		.ix-link {
+		  display: block;
+		  margin-bottom: 1em;
+		}
+		button {
+		  margin-left: 10px;
+		  font-size: 14px;
+		  border-radius:5px;
+		}
+		h3 {
+		  margin-top: 0;
+		}
+
+
+		@media (max-width: 610px) {
+		  .wrapper {
+		    width: auto;
+		  }
+
+		  .detail, .demo-trigger {
+		    float: none;
+		  }
+
+		  .demo-trigger {
+		    max-width: 100%;
+		    width: auto;
+		    margin: 0 auto;
+		  }
+
+		  .detail {
+		    margin: 0;
+		    width: auto;
+		  }
+
+		  p {
+		    margin: 0 auto 1em;
+		  }
+
+		  .responsive-hint {
+		    display: none;
+		  }
+		  h3 {
+		    margin-top:20px;
+		  }
+		}
+    body {
+	background-color: #FFFFFF;
+}
+    body,td,th {
+	color: #333333;
+}
+    </style>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<header class="htmleaf-header">
+		<div class="htmleaf-demo center">
+		  <a href="index.html">Luminous</a>
+		  <a href="index2.html" class="current">Drift</a>
+		  <a href="index3.html">Luminous+Drift</a>
+		  <a href="index4.html">特殊效果</a>
+		</div>
+	</header>
+	<section class="htmleaf-container">
+		<div class="wrapper">
+		  <img class="demo-trigger" src="img/wristwatch-thumb.jpg" data-zoom="img/wristwatch-hd.jpg">
+
+		  <div class="detail">
+		   <section>
+		      <h3>Men's Watch - SWWT-123SS - Stainless Steel</h3>
+		      <p><strong>Specifications:</strong></p>
+		      <ul>
+		        <li>Made in USA</li>
+		        <li>35 mm stainless steel case</li>
+		        <li>Stainless link bracelet with buckle closure</li>
+		        <li>Water resistant to 100m</li>
+		      </ul>
+		      <h4>$115.95 <button>Add to Cart</button></h4>
+		    </section>
+		  </div>
+		</div>
+	</section>
+	
+	<script src="dist/Drift.min.js"></script>
+    <script>
+      	var demoTrigger = document.querySelector('.demo-trigger');
+		var paneContainer = document.querySelector('.detail');
+		new Drift(demoTrigger, {
+		    paneContainer: paneContainer,
+		    inlinePane: false
+		});
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,maximum-scale=1">
+	<meta http-equiv="Accept-CH" content="DPR, Width, Viewport-Width">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link rel="stylesheet" media="screen, projection" href="dist/drift-basic.css">
+	<style type="text/css">
+      .wrapper{
+      	width: 400px;
+      	margin:50px auto;
+      }
+    body {
+	background-color: #FFFFFF;
+}
+    body,td,th {
+	color: #333333;
+}
+    </style>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<header class="htmleaf-header">
+		<div class="htmleaf-demo center">
+		  <a href="index.html">Luminous</a>
+		  <a href="index2.html">Drift</a>
+		  <a href="index3.html">Luminous+Drift</a>
+		  <a href="index4.html" class="current">特殊效果</a>
+		</div>
+	</header>
+	<section class="htmleaf-container">
+		<div class="wrapper">
+	      <img src="img/watch-outside.jpg" data-zoom="img/watch-inside.jpg">
+	    </div>
+	</section>
+	<script src="dist/Drift.min.js"></script>
+    <script>
+      	new Drift(document.querySelector('img'), {
+		    inlinePane: true,
+		    containInline: true,
+		    zoomFactor: 1
+		});
+    </script>
+</body>
+</html>
