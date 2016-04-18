@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+	 <style>
+	 .container{
+	 	padding: 1em 7em;
+	 }
+	  td {
+	    padding: 8px 10px;
+	  }
+
+	  td:first-child {
+	    font-family: monospace;
+	  }
+
+	  h3 {
+	    margin-top: 100px;
+	  }
+
+	  h5 {
+	    margin-bottom: 0;
+	  }
+
+	  hr {
+	    margin-top: 2px;
+	  }
+
+	  .example-1 {
+	    height: 600px;
+	    border: 1px solid #ddd;
+	    border-radius: 4px;
+	  }
+
+	  .example-2, .example-3, .example-4, .example-5 {
+	    height: 250px;
+	    border: 1px solid #ddd;
+	    border-radius: 4px;
+	  }
+
+	  #one, #two {
+	    padding: 20px;
+	  }
+
+	  #one p {
+	    padding: 0;
+	  }
+
+	  .example-4, .example-5 {
+	    height: 400px;
+	  }
+
+	  .split p {
+	    padding: 20px;
+	  }
+
+	  .split {
+	    -webkit-box-sizing: border-box;
+	       -moz-box-sizing: border-box;
+	            box-sizing: border-box;
+
+	    overflow-y: auto;
+	    overflow-x: hidden;
+	  }
+
+	  .gutter {
+	    background-color: #eee;
+
+	    background-repeat: no-repeat;
+	    background-position: 50%;
+
+	    cursor: move;
+	    cursor: grab;
+	    cursor: -moz-grab;
+	    cursor: -webkit-grab;
+	  }
+
+	  .gutter:active { 
+	    cursor: grabbing;
+	    cursor: -moz-grabbing;
+	    cursor: -webkit-grabbing;
+	  }
+
+	  .gutter.gutter-horizontal {
+	    background-image: url('grips/vertical.png');
+	  }
+
+	  .gutter.gutter-vertical {
+	    background-image: url('grips/horizontal.png');
+	  }
+
+	  .split.split-horizontal, .gutter.gutter-horizontal {
+	    height: 100%;
+	    float: left;
+	  }
+	  body,td,th {
+	color: #666666;
+}
+body {
+	background-color: #FFFFFF;
+}
+     </style>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<article class="htmleaf-container">
+        
+			  <a href="index.html" class="current">DEMO1</a>
+			  <a href="index2.html">DEMO2</a>
+		<div class="container">
+			<div class="row example-1">
+            <div id="one" class="split split-horizontal">
+                <p>Split.js is a lightweight, unopinionated utility for creating adjustable split views or panes.</p>
+                <p>
+                  No dependencies or markup required, just two or more elements with a common parent.
+                </p>
+                <p>
+                  Views can be split horizontally or vertically, with draggable gutters inserted between every two elements.
+                </p>
+            </div>
+            <div id="two" class="split split-horizontal">
+              <h5>Documentation</h5>
+              <hr>
+              <pre><code>Split(&lt;selector[]&gt; selectors, &lt;options&gt; options?)</code></pre>
+              <table class="u-full-width">
+                <thead>
+                  <tr>
+                    <th>Options</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>sizes</td>
+                    <td>Array of numbers</td>
+                    <td></td>
+                    <td>Initial sizes of each element in percents.</td>
+                  </tr>
+                  <tr>
+                    <td>minSize</td>
+                    <td>Number or array</td>
+                    <td>100</td>
+                    <td>Minimum size of each element.</td>
+                  </tr>
+                  <tr>
+                    <td>gutterSize</td>
+                    <td>Number</td>
+                    <td>10</td>
+                    <td>Gutter size in pixels.</td>
+                  </tr>
+                  <tr>
+                    <td>snapOffset</td>
+                    <td>Number</td>
+                    <td>30</td>
+                    <td>Snap to minimum size offset.</td>
+                  </tr>
+                  <tr>
+                    <td>direction</td>
+                    <td>String</td>
+                    <td>'horizontal'</td>
+                    <td>Direction to split: horizontal or vertical.</td>
+                  </tr>
+                  <tr>
+                    <td>cursor</td>
+                    <td>String</td>
+                    <td>'grabbing'</td>
+                    <td>Cursor to display while dragging.</td>
+                  </tr>
+                  <tr>
+                    <td>onDrag</td>
+                    <td>Function</td>
+                    <td></td>
+                    <td>Callback on drag.</td>
+                  </tr>
+                  <tr>
+                    <td>onDragStart</td>
+                    <td>Function</td>
+                    <td></td>
+                    <td>Callback on drag start.</td>
+                  </tr>
+                  <tr>
+                    <td>onDragEnd</td>
+                    <td>Function</td>
+                    <td></td>
+                    <td>Callback on drag end.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+          <h5>Usage Examples</h5>
+          <hr>
+          <p>A split with two elements, starting at 25% and 75% wide with 200px minimum width.</p>
+                <pre><code>Split(['#one', '#two'], {
+    sizes: [25, 75],
+    minSize: 200
+});</code></pre>
+          <div class="example-2">
+            <div id="three" class="split split-horizontal">
+              <p>Bacon ipsum dolor amet beef ribs meatloaf picanha pork loin pork chop rump pig sausage bacon shank boudin beef fatback. Pork loin turducken t-bone chicken.</p>
+            </div>
+            <div id="four" class="split split-horizontal">
+              <p>Brisket andouille cow ball tip. Ham ground round short loin tri-tip ribeye t-bone boudin, pork loin turkey drumstick tongue pork chop. Kielbasa doner picanha turducken, swine bacon shank pastrami andouille. Hamburger tongue tenderloin meatball picanha. Rump bresaola chicken bacon, ground round corned beef ribeye salami. Turkey fatback short ribs andouille meatball, brisket pork belly cow t-bone turducken pig beef ribs.</p>
+            </div>
+          </div>
+          <br>
+        <p>A split with three elements, starting with even widths with 100px, 100px and 300px minimum widths, respectively.</p>
+                <pre><code>Split(['#one', '#two', '#three'], {
+    minSize: [100, 100, 300]
+});</code></pre>
+          <div class="example-3">
+            <div id="five" class="split split-horizontal">
+              <p>Min width: 100px<br><br>
+              Bacon ipsum dolor amet beef ribs meatloaf picanha pork loin pork chop rump pig sausage bacon shank boudin beef fatback. Pork loin turducken t-bone chicken.</p>
+            </div>
+            <div id="six" class="split split-horizontal">
+              <p>Min width: 100px<br><br>
+              Brisket andouille cow ball tip. Ham ground round short loin tri-tip ribeye t-bone boudin, pork loin turkey drumstick tongue pork chop. Kielbasa doner picanha turducken, swine bacon shank pastrami andouille.</p>
+            </div>
+            <div id="seven" class="split split-horizontal">
+              <p>Min width: 300px<br><br>
+              Hamburger tongue tenderloin meatball picanha. Rump bresaola chicken bacon, ground round corned beef ribeye salami. Turkey fatback short ribs andouille meatball, brisket pork belly cow t-bone turducken pig beef ribs.</p>
+            </div>
+          </div>
+          <br>
+        <p>A vertical split with two elements, starting with even heights.</p>
+                <pre><code>Split(['#eight', '#nine'], {
+    direction: 'vertical'
+});</code></pre>
+          <div class="example-4">
+            <div id="eight" class="split split-vertical">
+              <p>Bacon ipsum dolor amet beef ribs meatloaf picanha pork loin pork chop rump pig sausage bacon shank boudin beef fatback. Pork loin turducken t-bone chicken.</p>
+            </div>
+            <div id="nine" class="split split-vertical">
+              <p>Brisket andouille cow ball tip. Ham ground round short loin tri-tip ribeye t-bone boudin, pork loin turkey drumstick tongue pork chop. Kielbasa doner picanha turducken, swine bacon shank pastrami andouille.</p>
+            </div>
+          </div>
+          <br>
+        <p>Nested splits, horizontal and vertical.</p>
+                <pre><code>Split(['#ten', '#eleven']);
+
+Split(['#twelve', '#thirteen'], {
+    direction: 'vertical'
+});</code></pre>
+          <div class="example-5">
+            <div id="ten" class="split split-horizontal">
+              <div id="twelve" class="split split-vertical">
+                <p>Bacon ipsum dolor amet beef ribs meatloaf picanha pork loin pork chop rump pig sausage bacon shank boudin beef fatback. Pork loin turducken t-bone chicken.</p>
+              </div>
+              <div id="thirteen" class="split split-vertical">
+                <p>Bacon ipsum dolor amet beef ribs meatloaf picanha pork loin pork chop rump pig sausage bacon shank boudin beef fatback. Pork loin turducken t-bone chicken.</p>
+              </div>
+            </div>
+            <div id="eleven" class="split split-horizontal">
+              <p>Brisket andouille cow ball tip. Ham ground round short loin tri-tip ribeye t-bone boudin, pork loin turkey drumstick tongue pork chop. Kielbasa doner picanha turducken, swine bacon shank pastrami andouille.</p>
+            </div>
+          </div>
+          <br>
+          <br>
+        </div>
+		</div>
+	</article>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script src="js/split.js"></script>
+	<script>
+	    Split(['#one', '#two'], {
+	        sizes: [29, 71],
+	        minSize: 200
+	    });
+
+	    Split(['#three', '#four'], {
+	        sizes: [25, 75],
+	        minSize: 200
+	    });
+
+	    Split(['#five', '#six', '#seven'], {
+	        minSize: [100, 100, 300]
+	    });
+
+	    Split(['#eight', '#nine'], {
+	        direction: 'vertical'
+	    });
+
+	    Split(['#ten', '#eleven']);
+
+	    Split(['#twelve', '#thirteen'], {
+	        direction: 'vertical'
+	    });
+	</script>
+</body>
+</html>
