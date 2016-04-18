@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="http://libs.useso.com/js/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<script>
+      document.documentElement.classList.add('js-enabled');
+    </script>
+    <style>
+      .js-enabled .fooReveal { visibility: hidden; }
+      .fooContainer { perspective: 800px; }
+    body,td,th {
+	color: #666666;
+}
+body {
+	background-color: #FFFFFF;
+}
+    </style>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<article class="htmleaf-container">
+		<header class="htmleaf-header">
+			<div class="htmleaf-demo center">
+			  <a href="index.html">默认</a>
+			  <a href="index2.html" class="current">3D效果</a>
+			</div>
+		</header>
+		<div class="container">
+			<div class="row fooContainer mt50">
+				<div class="col-md-3 fooReveal"><img class="img-thumbnail" src="img/1.jpg"></div>
+				<div class="col-md-3 fooReveal"><img class="img-thumbnail" src="img/2.jpg"></div>
+				<div class="col-md-3 fooReveal"><img class="img-thumbnail" src="img/3.jpg"></div>
+				<div class="col-md-3 fooReveal"><img class="img-thumbnail" src="img/4.jpg"></div>
+			</div>
+			<div class="row fooContainer mt50">
+				<div class="col-md-3 fooReveal"><img class="img-thumbnail" src="img/5.jpg"></div>
+				<div class="col-md-3 fooReveal"><img class="img-thumbnail" src="img/6.jpg"></div>
+				<div class="col-md-3 fooReveal"><img class="img-thumbnail" src="img/7.jpg"></div>
+				<div class="col-md-3 fooReveal"><img class="img-thumbnail" src="img/8.jpg"></div>
+			</div>
+			<div class="row fooContainer mt50">
+				<div class="col-md-3 fooReveal"><img class="img-thumbnail" src="img/9.jpg"></div>
+				<div class="col-md-3 fooReveal"><img class="img-thumbnail" src="img/10.jpg"></div>
+				<div class="col-md-3 fooReveal"><img class="img-thumbnail" src="img/11.jpg"></div>
+				<div class="col-md-3 fooReveal"><img class="img-thumbnail" src="img/12.jpg"></div>
+			</div>
+			<div class="row fooContainer mt50">
+				<div class="col-md-3 fooReveal"><img class="img-thumbnail" src="img/13.jpg"></div>
+				<div class="col-md-3 fooReveal"><img class="img-thumbnail" src="img/14.jpg"></div>
+				<div class="col-md-3 fooReveal"><img class="img-thumbnail" src="img/15.jpg"></div>
+				<div class="col-md-3 fooReveal"><img class="img-thumbnail" src="img/16.jpg"></div>
+			</div>
+		</div>
+	</article>
+	
+	<script src="dist/scrollreveal.min.js"></script>
+    <script>
+      window.sr = ScrollReveal();
+      sr.reveal( '.fooReveal', { rotate: {x: 65},reset:true } );
+  </script>
+</body>
+</html>
