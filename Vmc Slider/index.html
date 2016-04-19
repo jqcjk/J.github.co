@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vmc Slider | 带多种过渡特效的jQuery幻灯片插件|DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style type="text/css">
+	body,td,th {
+	color: #666666;
+}
+body {
+	background-color: #FFFFFF;
+}
+    </style>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<article class="jqcjk-container">
+		
+		<!-- <div class="container"> -->
+			<div class="content" style="width:1000px;height:300px;margin:30px auto;overflow:hidden;">
+				<div id="slider">
+					<a href="#"><img src="img/demo1.jpg"/></a>
+					<a href="#"><img src="img/demo2.jpg"/></a>
+					<a href="#"><img src="img/demo3.jpg"/></a>
+					<a href="#"><img src="img/demo4.jpg"/></a>
+					<a href="#"><img src="img/demo5.jpg"/></a>
+					<a href="#"><img src="img/demo6.jpg"/></a>
+				</div>
+			</div>
+		<!-- </div> -->
+		
+	</article>
+	
+	<script src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
+	<script type="text/javascript" src="js/vmc.slider.full.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('#slider').vmcSlider({
+				width: 1000,
+				height: 300,
+				gridCol: 10,
+				gridRow: 5,
+				gridVertical: 20,
+				gridHorizontal: 10,
+				autoPlay: true,
+				ascending: true,
+				effects: [
+					'fade', 'fadeLeft', 'fadeRight', 'fadeTop', 'fadeBottom', 'fadeTopLeft', 'fadeBottomRight',
+					'blindsLeft', 'blindsRight', 'blindsTop', 'blindsBottom', 'blindsTopLeft', 'blindsBottomRight',
+					'curtainLeft', 'curtainRight', 'interlaceLeft', 'interlaceRight', 'mosaic', 'bomb', 'fumes'
+				],
+				ie6Tidy: false,
+				random: false,
+				duration: 2000,
+				speed: 900
+			});
+		});
+	</script>
+</body>
+</html>
