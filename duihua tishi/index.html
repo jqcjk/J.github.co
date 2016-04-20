@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link href='http://fonts.useso.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
+	<link href='css/app.css' rel='stylesheet' type='text/css'/>
+	<link href='css/ply.css' rel='stylesheet' type='text/css'/>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="jqcjk-container">
+		
+		<div class="container">
+			<div class="row">
+				<h2>Alert</h2>
+
+				<div class="col-left">
+					<div class="ply-layer alert example">
+						<div class="ply-inside">
+							<div class="ply-content">Hello %username%!</div>
+							<div class="ply-footer"><button class="ply-ok">OK</button></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-right">
+					<pre class="javascript"><code>
+Ply.dialog("alert", "Hello %username%!");
+					</code></pre>
+				</div>
+			</div>
+			<div class="row">
+				<h2>Confirm</h2>
+
+				<div class="col-left">
+					<div class="ply-layer confirm example">
+						<div class="ply-inside">
+							<div class="ply-content">Continue?</div>
+							<div class="ply-footer"><button class="ply-ctrl ply-ok">OK</button><button class="ply-ctrl ply-cancel">Cancel</button></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-right">
+					<pre class="javascript"><code>
+						Ply.dialog(
+							"confirm",
+							{ effect: "3d-sign" },
+							"Continue?"
+						);
+					</code></pre>
+				</div>
+			</div>
+			<div class="row">
+				<h2>Prompt</h2>
+
+				<div class="col-left">
+					<div class="ply-layer prompt example">
+						<div class="ply-inside">
+							<div class="ply-header">Spam subscribe</div>
+							<div class="ply-content">
+								<input class="ply-input" placeholder="E-mail"/>
+							</div>
+							<div class="ply-footer"><button class="ply-ctrl ply-ok">OK</button><button class="ply-ctrl ply-cancel">Cancel</button></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-right">
+					<pre class="javascript"><code>
+						Ply.dialog("prompt", {
+							title: "Spam subscribe",
+							form: { email: "E-mail" }
+						});
+					</code></pre>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<h2>Dialogs / Multistep</h2>
+
+				<div class="col-left">
+					<div class="ply-layer confirm example">
+						<div class="ply-inside">
+							<div class="ply-content">You want to win?</div>
+							<div class="ply-footer"><button class="ply-ctrl ply-ok">Yes</button><button class="ply-ctrl ply-cancel">No</button></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-right">
+					<pre class="javascript"><code>
+						Ply.dialog({
+							"intro": {
+								ui: "confirm",
+								data: {
+									text: "You want to win?",
+									ok: "Yes",
+									cancel: "No"
+								},
+								next: "congratulations", // OK button
+								nextEffect: "3d-flip[180,-180]",
+								back: "exit", // Cancel button
+								backEffect: "scale"
+							},
+							"congratulations": {
+								data: {
+									children: [{
+										tag: "img",
+										src: "img/1.gif"
+									}],
+									ok: "Okay"
+								}
+							},
+							"exit": {
+								data: "Very vain!"
+							}
+						});
+					</code></pre>
+				</div>
+			</div>
+			<div style="text-align: center; padding: 50px 0;">
+				<h2 style="font-size: 40px">&infin; Customization examples &infin;</h2>
+			</div>
+			<div class="row">
+				<h2>Login</h2>
+
+				<div class="col-left">
+					<div class="ply-layer base example">
+						<div class=" ply-inside">
+							<div class=" ply-form ply-ui">
+								<div class=" ply-header ply-ui">Login</div>
+								<div class=" ply-content ply-ui">
+									<div data-ply-name="dialog-form" class=" ply-ui">
+										<input type="text" placeholder="E-mail" class=" ply-input ply-ui"/>
+										<input type="password" placeholder="Password" class=" ply-input ply-ui"/>
+									</div>
+								</div>
+								<div class=" ply-footer ply-ui">
+									<button class=" ply-ctrl ply-ok ply-ui">Enter</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-right">
+					<pre class="javascript"><code>
+						// Usage: ply@rubaxa.org / 123
+						// ply/login.dialog.js
+						Ply.factory('login', function (options, data, resolve) {
+							options.flags = {
+								closeBtn: false,
+								closeByEsc: true,
+								closeByOverlay: true,
+								visibleOverlayInStack: true
+							};
+
+							options.onaction = function (ui) {
+								var data = ui.data;
+								return !ui.state || $.post('/api/login', data).fail(function () {
+									$(ui.widget.el)
+										.addClass('ply-invalid')
+										.one('input', function () {
+											$(this).removeClass('ply-invalid')
+										})
+									;
+								});
+							};
+
+							// Use base factory
+							Ply.factory.use('base', options, {
+								title: 'Login',
+								form: {
+									email: 'E-mail',
+									password: { hint: 'Password', type: 'password' }
+								},
+								ok: 'Enter',
+								cancel: false
+							}, resolve);
+						});
+
+
+						// app.js
+						Ply.dialog('login').done(function (ui) {
+							Ply.dialog('alert', 'Bingo!');
+						});
+					</code></pre>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+	<script src="http://libs.useso.com/js/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-2.1.1.min.js"><\/script>')</script>
+	<script type="text/javascript" src="js/Ply.min.js"></script>
+	<script type="text/javascript">
+		$('.example')
+			.each(function () {
+				var $el = $(this);
+				var $code = $el.closest('.row').find('code');
+				var code = $code.text().split('\n');
+				var offset = ((code[1] || code[0]).match(/^[\s\t]+/) || [''])[0].length;
+
+				$.each(code, function (i) {
+					code[i] = code[i].substr(offset);
+				});
+
+				code = code.slice(+(code.length > 1)).join('\n').replace(/\t/g, '  ');
+
+				$el.data('code', code);
+				$code.html(code);
+
+				try {
+					hljs.highlightBlock($code.parent()[0]);
+				} catch (err) {}
+			})
+			.on('click', function () {
+				var code = $.data(this, 'code');
+				Function(code)();
+				return false;
+			});
+	</script>
+</body>
+</html>
