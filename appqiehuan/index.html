@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link rel='stylesheet prefetch' href='http://fonts.useso.com/css?family=Open+Sans'>
+	<link rel='stylesheet prefetch' href='fonts/font-awesome-4.3.0/css/font-awesome.min.css'>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<style type="text/css">
+	body,td,th {
+	font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+}
+body {
+	background-image: url(1.jpg);
+}
+    </style>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="jqcjk-container">
+		
+	  <div class="device">
+		  <div class="top">
+		    <div class="device-overlay"></div>
+		    <div class="editable">
+		      <div class="editable__circle">
+		        <div class="editable__rotater">
+		          <div class="editable__rotater-item">
+		            <i class="fa fa-camera"></i>
+		          </div>
+		        </div>
+		        <div class="editable__rotater">
+		          <div class="editable__rotater-item">
+		            <i class="fa fa-comments"></i>
+		          </div>
+		        </div>
+		        <div class="editable__rotater">
+		          <div class="editable__rotater-item">
+		            <i class="fa fa-video-camera"></i>
+		          </div>
+		        </div>
+		        <div class="editable__rotater">
+		          <div class="editable__rotater-item">
+		            <i class="fa fa-user"></i>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="editable__cont">
+		        <img src="img/user.jpg" class="editable__cont-img">
+		        <span class="editable__cont-edit js-edit">
+		          <i class="fa fa-pencil-square-o"></i>
+		        </span>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="mid">
+		    <div class="mid-block">
+		      <h2 class="mid-number">77</h2>
+		      <h3 class="mid-text">Teams</h3>
+		    </div>
+		    <div class="mid-block">
+		      <h2 class="mid-number">666</h2>
+		      <h3 class="mid-text">Reports</h3>
+		    </div>
+		  </div>
+		  <div class="btm">
+		    <h2 class="btm-text">Whatever</h2>
+		  </div>
+		  <div class="second">
+		    <h2 class="second__h">Hello there!</h2>
+		    <span class="second__back">Go back</span>
+		  </div>
+		</div>
+	</div>
+	
+	<script src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
+	<script>
+	$(document).ready(function () {
+	    var $editable = $('.editable');
+	    var $overlay = $('.device-overlay');
+	    var $circle = $('.editable__circle');
+	    var circleTrans = 400;
+	    var $item = $('.editable__rotater-item');
+	    var $second = $('.second');
+	    $(document).on('click', '.js-edit', function () {
+	        $editable.addClass('clicked');
+	        $overlay.addClass('active');
+	    });
+	    $(document).on('click', '.device-overlay', function () {
+	        $editable.removeClass('clicked');
+	        $overlay.removeClass('active');
+	    });
+	    $(document).on('click', '.editable__rotater-item', function () {
+	        $(this).parent().addClass('picked');
+	        $circle.addClass('picked');
+	        $second.addClass('picked');
+	    });
+	    $(document).on('click', '.second__back', function () {
+	        $('.editable__rotater').removeClass('picked');
+	        $circle.addClass('instant');
+	        $circle.css('top');
+	        $circle.removeClass('picked');
+	        $second.removeClass('picked');
+	        $editable.removeClass('clicked');
+	        $overlay.removeClass('active');
+	        setTimeout(function () {
+	            $circle.removeClass('instant');
+	        }, circleTrans);
+	    });
+	});
+	</script>
+</body>
+</html>

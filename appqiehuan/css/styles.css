@@ -1,0 +1,399 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-size: 62.5%;
+}
+
+body {
+  /*background: #000;*/
+  background-image: url("http://i.imgur.com/F8OHEcm.jpg");
+  background-size: cover;
+}
+
+.instant {
+  -webkit-transition: none !important;
+          transition: none !important;
+}
+
+.device {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -15.5rem;
+  margin-top: -27.5rem;
+  width: 31rem;
+  height: 55rem;
+  background: #F1F1F5;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+}
+.device-overlay {
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 55rem;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  -webkit-transition: opacity 0.4s, z-index 0 0.4s;
+          transition: opacity 0.4s, z-index 0 0.4s;
+}
+.device-overlay.active {
+  -webkit-transition: opacity 0.4s, z-index 0 0;
+          transition: opacity 0.4s, z-index 0 0;
+  z-index: 1;
+  opacity: 1;
+}
+
+.top {
+  position: relative;
+  height: 24.5rem;
+  background: -webkit-linear-gradient(225deg, #f04a40 0%, #9b2845 100%);
+  background: linear-gradient(-135deg, #f04a40 0%, #9b2845 100%);
+}
+
+.mid {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 9rem;
+  background: #EFD6DE;
+}
+.mid:after {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  width: 1px;
+  height: calc(100% - 4rem);
+  background: #DABBBC;
+}
+.mid-block {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+  height: 100%;
+  color: #E99AA6;
+}
+.mid-number {
+  font-size: 2.5rem;
+  line-height: 2rem;
+}
+.mid-text {
+  font-size: 1.3rem;
+}
+
+.btm {
+  position: relative;
+  height: 21.5rem;
+  background: #292931;
+}
+.btm-text {
+  font-size: 2rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  line-height: 21.5rem;
+}
+
+.editable {
+  z-index: 2;
+  position: absolute;
+  margin-left: -1px;
+  margin-top: -1px;
+  left: 50%;
+  top: 50%;
+  width: 2px;
+  height: 2px;
+  -webkit-transition: -webkit-transform 0.4s;
+          transition: transform 0.4s;
+  border-radius: 50%;
+}
+.editable.clicked {
+  -webkit-transform: translateY(5.8rem);
+      -ms-transform: translateY(5.8rem);
+          transform: translateY(5.8rem);
+}
+.editable__circle {
+  z-index: 3;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -12rem;
+  margin-top: -12rem;
+  width: 24rem;
+  height: 24rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-transform: scale(0.7);
+      -ms-transform: scale(0.7);
+          transform: scale(0.7);
+  -webkit-transition: opacity 0.4s, -webkit-transform 0.4s;
+          transition: opacity 0.4s, transform 0.4s;
+}
+.editable.clicked .editable__circle {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+.editable__circle.picked {
+  -webkit-transition: z-index 0.1s;
+          transition: z-index 0.1s;
+  z-index: 4;
+}
+.editable__rotater {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -3rem;
+  margin-top: -3rem;
+  width: 6rem;
+  height: 6rem;
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.77, 0.28, 0.53, 1.3);
+          transition: transform 0.4s cubic-bezier(0.77, 0.28, 0.53, 1.3);
+}
+.editable__rotater.picked {
+  z-index: 4;
+}
+.editable__rotater.picked .editable__rotater-item {
+  z-index: 5;
+  -webkit-transition: font-size 0.1s, -webkit-transform 0.3s 0.1s;
+          transition: font-size 0.1s, transform 0.3s 0.1s;
+  font-size: 0 !important;
+  -webkit-transform: scale(20) !important;
+      -ms-transform: scale(20) !important;
+          transform: scale(20) !important;
+}
+.editable__rotater-item {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  color: #C93942;
+  border-radius: 50%;
+  font-size: 0;
+  line-height: 6rem;
+  text-align: center;
+  -webkit-transform: translateY(-7rem);
+      -ms-transform: translateY(-7rem);
+          transform: translateY(-7rem);
+  -webkit-transition: font-size 0.4s cubic-bezier(0.77, 0.28, 0.53, 1.3), -webkit-transform 0.4s cubic-bezier(0.77, 0.28, 0.53, 1.3), color 0.3s;
+          transition: font-size 0.4s cubic-bezier(0.77, 0.28, 0.53, 1.3), transform 0.4s cubic-bezier(0.77, 0.28, 0.53, 1.3), color 0.3s;
+  cursor: pointer;
+}
+.editable.clicked .editable__rotater-item {
+  font-size: 3rem;
+}
+.editable__rotater-item:hover {
+  color: #8c272e;
+}
+.editable__rotater:nth-child(1) {
+  -webkit-transform: rotate(75deg);
+      -ms-transform: rotate(75deg);
+          transform: rotate(75deg);
+}
+.editable__rotater:nth-child(1) .editable__rotater-item {
+  -webkit-transform: translateY(-7rem) rotate(-75deg) scale(0.5);
+      -ms-transform: translateY(-7rem) rotate(-75deg) scale(0.5);
+          transform: translateY(-7rem) rotate(-75deg) scale(0.5);
+}
+.editable.clicked .editable__rotater:nth-child(1) {
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+.editable.clicked .editable__rotater:nth-child(1) .editable__rotater-item {
+  -webkit-transform: translateY(-7rem) rotate(0deg) scale(1);
+      -ms-transform: translateY(-7rem) rotate(0deg) scale(1);
+          transform: translateY(-7rem) rotate(0deg) scale(1);
+}
+.editable__rotater:nth-child(2) {
+  -webkit-transform: rotate(165deg);
+      -ms-transform: rotate(165deg);
+          transform: rotate(165deg);
+}
+.editable__rotater:nth-child(2) .editable__rotater-item {
+  -webkit-transform: translateY(-7rem) rotate(-165deg) scale(0.5);
+      -ms-transform: translateY(-7rem) rotate(-165deg) scale(0.5);
+          transform: translateY(-7rem) rotate(-165deg) scale(0.5);
+}
+.editable.clicked .editable__rotater:nth-child(2) {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.editable.clicked .editable__rotater:nth-child(2) .editable__rotater-item {
+  -webkit-transform: translateY(-7rem) rotate(-90deg) scale(1);
+      -ms-transform: translateY(-7rem) rotate(-90deg) scale(1);
+          transform: translateY(-7rem) rotate(-90deg) scale(1);
+}
+.editable__rotater:nth-child(3) {
+  -webkit-transform: rotate(255deg);
+      -ms-transform: rotate(255deg);
+          transform: rotate(255deg);
+}
+.editable__rotater:nth-child(3) .editable__rotater-item {
+  -webkit-transform: translateY(-7rem) rotate(-255deg) scale(0.5);
+      -ms-transform: translateY(-7rem) rotate(-255deg) scale(0.5);
+          transform: translateY(-7rem) rotate(-255deg) scale(0.5);
+}
+.editable.clicked .editable__rotater:nth-child(3) {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.editable.clicked .editable__rotater:nth-child(3) .editable__rotater-item {
+  -webkit-transform: translateY(-7rem) rotate(-180deg) scale(1);
+      -ms-transform: translateY(-7rem) rotate(-180deg) scale(1);
+          transform: translateY(-7rem) rotate(-180deg) scale(1);
+}
+.editable__rotater:nth-child(4) {
+  -webkit-transform: rotate(345deg);
+      -ms-transform: rotate(345deg);
+          transform: rotate(345deg);
+}
+.editable__rotater:nth-child(4) .editable__rotater-item {
+  -webkit-transform: translateY(-7rem) rotate(-345deg) scale(0.5);
+      -ms-transform: translateY(-7rem) rotate(-345deg) scale(0.5);
+          transform: translateY(-7rem) rotate(-345deg) scale(0.5);
+}
+.editable.clicked .editable__rotater:nth-child(4) {
+  -webkit-transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+.editable.clicked .editable__rotater:nth-child(4) .editable__rotater-item {
+  -webkit-transform: translateY(-7rem) rotate(-270deg) scale(1);
+      -ms-transform: translateY(-7rem) rotate(-270deg) scale(1);
+          transform: translateY(-7rem) rotate(-270deg) scale(1);
+}
+.editable__cont {
+  z-index: 3;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -4.5rem;
+  margin-top: -4.5rem;
+  width: 9rem;
+  height: 9rem;
+  border: 0.5rem solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform 0.4s;
+          transition: transform 0.4s;
+}
+.editable.clicked .editable__cont {
+  -webkit-transform: scale(0.55);
+      -ms-transform: scale(0.55);
+          transform: scale(0.55);
+}
+.editable__cont-img {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+}
+.editable__cont-edit {
+  position: absolute;
+  left: calc(50% + 1.86395rem);
+  top: -0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.1rem 0 0 0.1rem;
+  background: #28D99F;
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  font-weight: bold;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: opacity 0.2s;
+          transition: opacity 0.2s;
+  -webkit-animation: animEdit 0.7s infinite;
+          animation: animEdit 0.7s infinite;
+}
+.editable.clicked .editable__cont-edit {
+  opacity: 0;
+}
+
+.second {
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 1rem;
+  /*background: #fff;*/
+  background: url(../img/bg.jpg);
+  background-size: cover;
+  text-align: center;
+  opacity: 0;
+}
+.second.picked {
+  z-index: 5;
+  -webkit-transition: opacity 0.5s 0.2s;
+          transition: opacity 0.5s 0.2s;
+  opacity: 1;
+}
+.second__h {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.second__back {
+  text-decoration: underline;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.second__other {
+  position: absolute;
+  left: 0;
+  bottom: 1rem;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+@-webkit-keyframes animEdit {
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes animEdit {
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
