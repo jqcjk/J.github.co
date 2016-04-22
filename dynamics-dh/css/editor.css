@@ -1,0 +1,110 @@
+﻿#editor, #editor * {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial;
+  font-size: 13px;
+  color: #000;
+  user-select: none;
+  -webkit-user-select: none;
+}
+#editor {
+  position: relative;
+}
+#editor > div.graph {
+  position: relative;
+  height: 100%;
+  width: calc(100% - 214px);
+  overflow: hidden;
+  cursor: default;
+}
+#editor > div.graph > canvas {
+  outline: none;
+}
+#editor > div.graph > span {
+  font-size: 10px;
+  color: #8096B1;
+  position: absolute;
+  left: 2px;
+  margin-top: -5px;
+}
+#editor > div.graph > span.index1 { top: calc(33% - 8px); }
+#editor > div.graph > span.index0 { top: calc(66% - 11px); }
+#editor > div.graph > canvas {
+  background: #F4F9FF;
+}
+#editor > div.settings {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  width: 205px;
+  height: calc(100% - 20px);
+  overflow-y: auto;
+}
+#editor > div.settings select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  width: 100%;
+  height: 27px;
+  border-radius: 5px;
+  padding: 6px 20px 6px 6px;
+  color: #fff;
+  margin-bottom: 15px;
+  text-align: left;
+  background: #0070FF url(../images/8b000ea1c3ef468b96c1b6798df59bf0.gif) no-repeat 190px 9px;
+  background-size: 5px 8px;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5)
+{
+  #editor > div.settings select {
+    background-image: url(../images/326a0e04a7b148acb38fcbe4fba02c87.gif);
+  }
+  #editor > div.closeButton {
+    background-image: url('../images/86778a134cf846aebd70e7df3c12dbd6.gif');
+  }
+}
+#editor > div.settings select:focus {
+  outline: none;
+  background-color: #394E6E;
+}
+#editor > div.settings label {
+  float: left;
+  color: #394E6E;
+}
+#editor > div.settings .value {
+  float: right;
+  color: #394E6E;
+  margin-bottom: 4px
+}
+#editor > div.settings div.slider {
+  clear: both;
+  position: relative;
+  width: 100%;
+  height: 20px;
+  margin-bottom: 7px;
+}
+#editor > div.settings div.slider .bar {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  background: #e0effe;
+  height: 3px;
+  width: 100%;
+  border-radius: 3px;
+}
+#editor > div.settings div.slider .control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  height: 7px;
+  width: 7px;
+  border: 2px solid #0070FF;
+  border-radius: 6px;
+}
+#editor > div.settings div.slider .control:active,
+#editor > div.settings div.slider .control.highlighted {
+  border-color: black;
+}
