@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel='stylesheet' href='css/reset.css'>
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<script src='js/prefixfree.min.js'></script>
+	<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+	<link rel='stylesheet prefetch' href='css/animate.css'>
+	<link rel="stylesheet" type="text/css" href="css/demo.css">
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="jqcjk-container">
+	
+
+		<main id="container">
+		    <h2>Material Overlay Animation</h2>
+		    <div class="img-wrapper">
+		        <img src="img/dribbble-foxes.jpg" alt="Just Background">
+		    </div>
+		    <p class="detail">Click the Button to see the "Material Animation". Works great on modern browser.</p>
+
+		    <div class="button-wrapper">
+		        <div class="layer"></div>
+		        <button class="main-button fa fa-info">
+		            <div class="ripple"></div>
+		        </button>
+		    </div>
+
+		    <div class="layered-content">
+		        <button class="close-button fa fa-times"></button>
+		        <div class="content">
+		            <img src="img/balapa.png" alt="Balapa">
+		            <p>Crafted by balapa.</p>
+		            
+		        </div>
+		    </div>
+		</main>
+		
+	</div>
+	
+	
+	<script src='js/stopExecutionOnTimeout.js'></script>
+	<script src='http://libs.useso.com/js/jquery/1.11.0/jquery.min.js'></script>
+	<script>
+	(function () {
+	    'use strict';
+	    var $mainButton = $('.main-button'), $closeButton = $('.close-button'), $buttonWrapper = $('.button-wrapper'), $ripple = $('.ripple'), $layer = $('.layered-content');
+	    $mainButton.on('click', function () {
+	        $ripple.addClass('rippling');
+	        $buttonWrapper.addClass('clicked').delay(1500).queue(function () {
+	            $layer.addClass('active');
+	        });
+	    });
+	    $closeButton.on('click', function () {
+	        $buttonWrapper.removeClass('clicked');
+	        $ripple.removeClass('rippling');
+	        $layer.removeClass('active');
+	    });
+	}());
+	</script>
+</body>
+</html>
