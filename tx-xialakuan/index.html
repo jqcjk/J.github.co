@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<style type="text/css">
+	body,td,th {
+	font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+	color: #333333;
+}
+body {
+	background-color: #FFFFFF;
+}
+    </style>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="jqcjk-container">
+		<header class="jqcjk-header">
+			<h1>jQuery和CSS3带弹性效果的创意下拉框特效 </h1>
+			
+	  </header>
+		<div class="drop">
+		  <div class="option active placeholder" data-value="placeholder">
+		    Choose wisely
+		  </div>
+		  <div class="option" data-value="wow">
+		    Wow!
+		  </div>
+		  <div class="option" data-value="drop">
+		    So dropdown!
+		  </div>
+		  <div class="option" data-value="select">
+		    Very select!
+		  </div>
+		  <div class="option" data-value="custom">
+		    Much custom!
+		  </div>
+		  <div class="option" data-value="animation"> 
+		    Such animation!
+		  </div>
+		</div>
+	</div>
+	
+	<script src='js/stopExecutionOnTimeout.js?t=1'></script>
+	<script src='http://libs.useso.com/js/jquery/1.11.0/jquery.min.js'></script>
+	<script>
+	$(document).ready(function () {
+	    $('.drop .option').click(function () {
+	        var val = $(this).attr('data-value'), $drop = $('.drop'), prevActive = $('.drop .option.active').attr('data-value'), options = $('.drop .option').length;
+	        $drop.find('.option.active').addClass('mini-hack');
+	        $drop.toggleClass('visible');
+	        $drop.removeClass('withBG');
+	        $(this).css('top');
+	        $drop.toggleClass('opacity');
+	        $('.mini-hack').removeClass('mini-hack');
+	        if ($drop.hasClass('visible')) {
+	            setTimeout(function () {
+	                $drop.addClass('withBG');
+	            }, 400 + options * 100);
+	        }
+	        triggerAnimation();
+	        if (val !== 'placeholder' || prevActive === 'placeholder') {
+	            $('.drop .option').removeClass('active');
+	            $(this).addClass('active');
+	        }
+	        ;
+	    });
+	    function triggerAnimation() {
+	        var finalWidth = $('.drop').hasClass('visible') ? 22 : 20;
+	        $('.drop').css('width', '24em');
+	        setTimeout(function () {
+	            $('.drop').css('width', finalWidth + 'em');
+	        }, 400);
+	    }
+	});
+	</script>
+</body>
+</html>
