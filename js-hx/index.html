@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<script src='js/blooming-menu.min.js'></script>
+	<style>
+	    .blooming-menu__item-btn {
+	      transition:
+	        box-shadow .28s cubic-bezier(.4,0,.2,1),
+	        opacity .28s cubic-bezier(.4,0,.2,1)
+	      ;
+	      background-size: 50%;
+	      background-position: center center;
+	      background-repeat: no-repeat;
+	      opacity: 0.8;
+	    }
+
+	    .blooming-menu__item:nth-of-type(1) .blooming-menu__item-btn {
+	      background-image: url(img/language.svg);
+	    }
+
+	    .blooming-menu__item:nth-of-type(2) .blooming-menu__item-btn {
+	      background-image: url(img/accessibility.svg);
+	    }
+
+	    .blooming-menu__item:nth-of-type(3) .blooming-menu__item-btn {
+	      background-image: url(img/favorite.svg);
+	    }
+
+	    .blooming-menu__item:nth-of-type(4) .blooming-menu__item-btn {
+	      background-image: url(img/find-in-page.svg);
+	      background-size: 40%;
+	    }
+
+	    .blooming-menu__item:nth-of-type(5) .blooming-menu__item-btn {
+	      background-image: url(img/get-app.svg);
+	      background-size: 35%;
+	    }
+
+	    .blooming-menu__item:nth-of-type(6) .blooming-menu__item-btn {
+	      background-image: url(img/grade.svg);
+	    }
+
+	    .blooming-menu__item:nth-of-type(7) .blooming-menu__item-btn {
+	      background-image: url(img/home.svg);
+	    }
+
+	    .blooming-menu__item:nth-of-type(8) .blooming-menu__item-btn {
+	      background-image: url(img/lock.svg);
+	      background-size: 35%;
+	    }
+
+	    .blooming-menu__item-btn:hover {
+	      box-shadow: 0 8px 17px 0 rgba(0,0,0,.2);
+	      opacity: 1;
+	    }
+
+	  </style>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="jqcjk-container">
+		<header class="jqcjk-header">
+			
+			<div class="jqcjk-demo center">
+			  <a href="index.html" class="current">DEMO1</a>
+			  <a href="bottom-left-corner.html">DEMO2</a>
+			</div>
+		</header>
+		<div class="jqcjk-content bgcolor-3">
+			<script>
+			    var bloomingMenu = new BloomingMenu({
+			      startAngle: 0,
+			      endAngle: 315,
+			      radius: 100,
+			      itemsNum: 8
+			    })
+			    bloomingMenu.render()
+
+			    // Prevents "elastic scrolling" on Safari
+			    document.addEventListener('touchmove', function(event) {
+			      'use strict'
+			      event.preventDefault()
+			    })
+			  </script>
+		</div>
+	</div>
+	
+</body>
+</html>
