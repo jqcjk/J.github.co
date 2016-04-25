@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" media="screen" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+  	<script src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js"></script>
+  	<script type="text/javascript" src="js/turnBox.js"></script>
+  <style>
+    body {
+      background-color: #c64d7f;
+      color: white;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    h2 {
+      display: block;
+      width: 100%;
+      font-weight: 300;
+      font-size: 20px;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+    
+    input {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      font-size: 100%;
+      vertical-align: baseline;
+      background: transparent;
+      background-color: #fff;
+    }
+
+    .example {
+      color: #fff;
+      margin: 0px auto;
+      text-align: center;
+    }
+
+    p {
+      line-height: 4.2;
+      -webkit-background-clip: content-box;
+      -moz-background-clip: content-box;
+      background-clip: content-box;
+    }
+
+    .example.turnBoxCurrentFace1 > .turnBoxFaceNum1, .example.turnBoxCurrentFace3 > .turnBoxFaceNum3 {
+      background-color: #d6bc00;
+    }
+
+    .example.turnBoxCurrentFace1 > .turnBoxFaceNum1:hover, .example.turnBoxCurrentFace3 > .turnBoxFaceNum3:hover {
+      background-color: #c6ae00;
+    }
+
+    .example > .turnBoxFaceNum1, .example > .turnBoxFaceNum3 {
+      background-color: #897800;
+    }
+
+    .example.turnBoxCurrentFace2 > .turnBoxFaceNum2 {
+      background-color: #e5c900;
+    }
+
+    .example > .turnBoxFaceNum1 p, .example > .turnBoxFaceNum3 p {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .example > .turnBoxFaceNum2 {
+      background-color: #998600;
+    }
+
+    .example > .turnBoxFace {
+      box-sizing: border-box;
+    }
+
+    .example > .turnBoxFaceNum1 {
+      background-color: darken($bg-color1, 15%);
+    }
+
+    .example > .turnBoxFaceNum2 {
+      background-color: darken($bg-color2, 15%);
+    }
+
+    .img-icon {
+      margin-top: 30px;
+      width: 52px;
+      height: 52px;
+    }
+
+    .message {
+      line-height: 1.8;
+      text-align: left;
+      padding: 0px 40px;
+      padding-top: 20px;
+      font-size: 16px;
+      word-break: break-all;
+    }
+
+    .example .check {
+      -webkit-transition: all 100ms ease-in-out 0ms;
+      -moz-transition: all 100ms ease-in-out 0ms;
+      -ms-transition: all 100ms ease-in-out 0ms;
+      -o-transition: all 100ms ease-in-out 0ms;
+      transition: all 100ms ease-in-out 0ms;
+      position: absolute;
+      width: 100%;
+      height: 75px;
+      left: 0;
+      bottom: 0;
+      line-height: 3.8;
+      background-color: #ea5f00;
+      cursor: pointer;
+    }
+
+    .example .check:hover {
+      background-color: #d15500;
+    }
+  </style>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	<div class="jqcjk-container">
+		<header class="jqcjk-header">
+			
+			<div class="jqcjk-demo center">
+			  <a href="index.html">CONTACT FORM</a>
+        <a href="alert_form.html">ALERT</a>
+        <a href="colorpicker.html">COLOR PICKER</a>
+			  <a href="confirm.html">CONFIRM</a>
+        <a href="login_form.html">LOGIN FORM</a>
+        <a href="notify.html" class="current">NOTIFY</a>
+        <a href="radio_check.html">RADIO</a>
+        <a href="tab.html">TAB</a>
+        <a href="toggle.html">TOGGLE</a>
+        <a href="uploader.html">UPLOADER</a>
+			</div>
+		</header>
+		<div class="jqcjk-content">
+			<div class="example">
+        <div>
+          <p class="turnBoxButton">
+            NOTIFY
+          </p>
+        </div>
+        <div>
+          <img class="img-icon" src="images/icon_information.png" alt="information">
+          <p class="message">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <span class="check">
+            OK
+          </span>
+        </div>
+        <div>
+          <p class="turnBoxButton turnBoxButtonPrev">CONFIRMED</p>
+        </div>
+      </div>
+		</div>
+	
+	</div>
+	
+	<script type="text/javascript">
+    var width = 340;
+    var duration = 450;
+    var duration = 450;
+    var general_box = $(".example");
+
+    general_box.turnBox({
+      width: width,
+      height: 87,
+      even: 320,
+      perspective: 3000,
+      duration: duration,
+      easing: "ease-in-out",
+      type: "repeat"
+    });
+    
+    general_box.find(".check").turnBoxLink({
+      box: ".example",
+      events: "click touchend"
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" media="screen" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+  	<script src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js"></script>
+  	<script type="text/javascript" src="js/turnBox.js"></script>
+  <style>
+    body {
+      background-color: #6da15b;
+      color: white;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    h2 {
+      display: block;
+      width: 100%;
+      font-weight: 300;
+      font-size: 20px;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+    
+    .example {
+      color: #fff;
+      margin: 0px auto;
+      text-align: center;
+    }
+
+    .turnBoxFace {
+      box-sizing: border-box;
+      font-size: 20px;
+    }
+
+    p {
+      line-height: 4.2;
+      cursor: pointer;
+    }
+
+    .example.turnBoxCurrentFace2 {
+      margin-top: 42px;
+    }
+
+    .uploading-bar {
+      width: 0%;
+      height: 100%;
+      background-color: #db1716;
+    }
+
+    .example.turnBoxCurrentFace1 > .turnBoxFaceNum1, .example.turnBoxCurrentFace2 > .turnBoxFaceNum2 {
+      background-color: #ed4100;
+      font-size: 20px;
+    }
+
+    .example.turnBoxCurrentFace1 > .turnBoxFaceNum1:hover{
+      background-color: #d33a00;
+      font-size: 20px;
+    }
+
+    .example.turnBoxCurrentFace3 > .turnBoxFaceNum3 {
+      background-color: #83d912;
+      font-size: 20px;
+    }
+
+    .example.turnBoxCurrentFace3 > .turnBoxFaceNum3:hover {
+      background-color: #75c110;
+      font-size: 20px;
+    }
+
+    > .turnBoxFaceNum1, > .turnBoxFaceNum2 {
+      background-color: #ba3300;
+      font-size: 20px;
+    }
+
+    > .turnBoxFaceNum3 {
+      background-color: #67aa0e;
+      font-size: 20px;
+    }
+  </style>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	<div class="jqcjk-container">
+		<header class="jqcjk-header">
+		
+			<div class="jqcjk-demo center">
+			  <a href="index.html">CONTACT FORM</a>
+        <a href="alert_form.html">ALERT</a>
+        <a href="colorpicker.html">COLOR PICKER</a>
+			  <a href="confirm.html">CONFIRM</a>
+        <a href="login_form.html">LOGIN FORM</a>
+        <a href="notify.html">NOTIFY</a>
+        <a href="radio_check.html">RADIO</a>
+        <a href="tab.html">TAB</a>
+        <a href="toggle.html">TOGGLE</a>
+        <a href="uploader.html" class="current">UPLOADER</a>
+			</div>
+		</header>
+		<div class="jqcjk-content">
+			<div class="example">
+        <div>
+          <p class="turnBoxButton">
+            UPLOAD
+          </p>
+        </div>
+        <div>
+          <div class="uploading-bar"></div>
+        </div>  
+        <div>
+          <p>
+            COMPLETE
+          </p>
+        </div>
+      </div>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+    var width = 340;
+    var box = $(".example");
+    var duration = 450;
+
+    box.turnBox(
+    {
+      width: width,
+      height: 87,
+      even: 5,
+      duration: duration,
+      perspective: "400px 20",
+      type: "repeat",
+      direction: "negative",
+      easing: "ease-in-out"
+    });
+
+    var bar = $(".example .turnBoxFaceNum2");
+    var loading = 0;
+    var time = 1000 / 600;
+    var bar_width;
+
+    function loading_bar()
+    {
+      if(loading > bar_width * 0.65) {
+        time = time * 1.1;
+      }
+
+      if(loading > bar_width * 0.75) {
+        time = 1;
+        loading = loading + 2;
+      } else {
+        loading = loading + 1;
+      }
+
+      timer = setTimeout(function()
+      {
+        bar.children("div").css("width", loading + "px");
+        loading_bar();
+      }, time);
+
+      if(loading >= bar_width) {
+        
+        clearTimeout(timer);
+
+        box.turnBoxAnimate(
+        {
+          face: 3
+        });
+
+        setTimeout(function()
+        {
+          loading = 0;
+          bar.children("div").css("width", "0px");
+          time = 1000 / 600;
+        }, duration);
+      }
+    }
+
+    $(".example .turnBoxFaceNum1").on("click", function()
+    {
+      setTimeout(function()
+      {
+        bar_width = bar.innerWidth();
+        loading_bar();
+      }, duration + 1000);
+    });
+    $(".example .turnBoxFaceNum3").on("click", function()
+    {
+      box.turnBoxAnimate();
+    });
+  </script>
+</body>
+</html>

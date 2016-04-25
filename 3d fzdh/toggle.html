@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" media="screen" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+  	<script src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js"></script>
+  	<script type="text/javascript" src="js/turnBox.js"></script>
+  <style>
+    body {
+      background-color: #0e5e8d;
+      color: white;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    h2 {
+      display: block;
+      width: 100%;
+      font-weight: 300;
+      font-size: 20px;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+    
+    .example {
+      margin: 0px auto;
+      line-height: 4.2;
+    }
+    
+    .turnBoxButton {
+      display: block;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .turnBoxFaceNum1 {
+      background-color: #101010;
+    }
+
+    .turnBoxCurrentFace1 > .turnBoxFaceNum1 {
+      background-color: #cbe995;
+      color: #3f7cab;
+      font-size: 20px;
+    }
+
+    .turnBoxCurrentFace1 > .turnBoxFaceNum1:hover {
+      background-color: #87ad58;
+    }
+
+    .turnBoxFaceNum2 {
+      background-color: #0087b7;
+      font-size: 20px;
+    }
+    
+    .turnBoxCurrentFace2 > .turnBoxFaceNum2 {
+      background-color: #00adea;
+    }
+
+    .turnBoxCurrentFace2 > .turnBoxFaceNum2:hover {
+      background-color: #00a2db;
+    }
+  </style>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	<div class="jqcjk-container">
+		<header class="jqcjk-header">
+		
+			<div class="jqcjk-demo center">
+			  <a href="index.html">CONTACT FORM</a>
+        <a href="alert_form.html">ALERT</a>
+        <a href="colorpicker.html">COLOR PICKER</a>
+			  <a href="confirm.html">CONFIRM</a>
+        <a href="login_form.html">LOGIN FORM</a>
+        <a href="notify.html">NOTIFY</a>
+        <a href="radio_check.html">RADIO</a>
+        <a href="tab.html">TAB</a>
+        <a href="toggle.html" class="current">TOGGLE</a>
+        <a href="uploader.html">UPLOADER</a>
+			</div>
+		</header>
+		<div class="jqcjk-content">
+			<div class="example switch">
+        <div>
+          <p class="turnBoxButton">OFF</p>
+        </div>
+        <div>
+          <p class="turnBoxButton turnBoxButtonPrev">ON</p>
+        </div>
+      </div>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+    $(".example").turnBox({
+      width: 340,
+      height: 87
+    });
+  </script>
+</body>
+</html>
