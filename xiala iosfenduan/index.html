@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link href='http://fonts.useso.com/css?family=Lato:400' rel='stylesheet' type='text/css'>
+  	<link rel="stylesheet" type="text/css" href="css/segment.css" />
+  	<style type="text/css">
+  	body,td,th {
+	font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+}
+body {
+	background-color: #FFFFFF;
+}
+    </style>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="jqcjk-container bgcolor-3">
+		<header class="jqcjk-header">
+			<h1>select下拉框转苹果IOS样式分段按钮jQuery插件</h1>
+		
+	  </header>
+		<div class="jqcjk-content ">
+			<select class="segment-select">
+			    <option value="1">None</option>
+			    <option value="2">First</option>
+			    <option value="3">Second</option>
+			</select>
+			<select class="segment-select">
+			    <option value="1">Yes</option>
+			    <option value="0">No</option>
+			</select>
+		</div>
+	</div>
+	
+	<script src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js"></script>
+	  <script type="text/javascript" src="js/segment.js"></script>
+	  <script type="text/javascript">
+	      jQuery(function ($){
+	           $(".segment-select").Segment();
+	      });
+	  </script>
+</body>
+</html>
