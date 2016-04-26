@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">
+	body,td,th {
+	font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+	color: #333333;
+}
+    </style>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="container">
+
+	  <div class="content bgcolor-8">
+			<div class="demo-container">
+			<div class="ptb screenshot-area">
+                <div class="row mg screenshot-area">
+                    <div class="span6 tc">
+                        <div class="plr">
+                            <div class="frame">
+                                <div class="frame-pad"><img src="img/picture.jpg" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span6">
+                        <div class="plr mb">
+                            <div class="frame">
+                                <div class="frame-pad"><img class="example1" src="img/picture.jpg" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span6">
+                        <div class="plr mb">
+                            <div class="frame">
+                                <div class="frame-pad"><img class="example2" src="img/picture.jpg" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <div class="plr">
+                            <div class="frame">
+                                <div class="frame-pad"><img class="example3" src="img/picture.jpg" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span3">
+                        <div class="plr">
+                            <div class="frame">
+                                <div class="frame-pad"><img class="example4" src="img/picture.jpg" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span3">
+                        <div class="plr">
+                            <div class="frame">
+                                <div class="frame-pad"><img class="example5" src="img/picture.jpg" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span2">
+                        <div class="plr mb">
+                            <div class="frame">
+                                <div class="frame-pad"><img class="example6" src="img/picture.jpg" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span2">
+                        <div class="plr">
+                            <div class="frame">
+                                <div class="frame-pad"><img class="example7" src="img/picture.jpg" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr/>
+
+            <h2 class="tc">Play Ground</h2>
+
+            <div id="playground" class="row mg">
+                <div class="span6">
+                    <form class="plr">
+                        <div class="row">
+                            <label class="tr">Width:</label>
+                            <div class="input">
+                                <div class="plr">
+                                    <div class="row">
+                                        <div class="span8">
+                                            <div class="pr">
+                                                <input type="text" id="width" placeholder="100px" value="200" />
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="pr">
+                                                <select id="width-type">
+                                                    <option value="px" selected>PX</option>
+                                                    <option value="%">%</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="tr">Height:</label>
+                            <div class="input">
+                                <div class="plr">
+                                    <div class="row">
+                                        <div class="span8">
+                                            <div class="pr">
+                                                <input type="text" id="height" placeholder="100px" value="200" />
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="pr">
+                                                <select id="height-type">
+                                                    <option value="px" selected>PX</option>
+                                                    <option value="%">%</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="tr">Y Position:</label>
+                            <div class="input">
+                                <div class="plr">
+                                    <div class="row">
+                                        <div class="span8">
+                                            <div class="pr">
+                                                <input type="text" id="y" placeholder="50" value="50" />
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="pr">
+                                                <select id="y-type">
+                                                    <option value="px">PX</option>
+                                                    <option value="%" selected>%</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="tr">X Position:</label>
+                            <div class="input">
+                                <div class="plr">
+                                    <div class="row">
+                                        <div class="span8">
+                                            <div class="pr">
+                                                <input type="text" id="x" placeholder="50" value="50" />
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="pr">
+                                                <select id="x-type">
+                                                    <option value="px">PX</option>
+                                                    <option value="%" selected>%</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="tr">Zoom:</label>
+                            <div class="input"><div class="plr"><input type="text" id="zoom" placeholder="1" value="1" /></div></div>
+                        </div>
+                        <div class="row">
+                            <label class="tr">Method:</label>
+                            <div class="input"><div class="plr">
+                                <select id="method">
+                                    <option value="auto" selected="selected">Auto</option>
+                                    <option value="modern">CSS3 (modern browsers that support CSS3)</option>
+                                    <option value="native">Native (older browsers)</option>
+                                </select>
+                            </div></div>
+                        </div>
+                        <div class="row">
+                            <label class="tr"></label>
+                            <div class="input">
+                                <div class="plr tr">
+                                    <button id="generate" type="button">生 成</button>
+                                    <button id="kill" type="button">重 置</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="span6 tc">
+                    <div class="plr tc">
+                        <div class="frame" style="width: auto;">
+                            <div class="frame-pad"><img src="img/picture.jpg" id="demo" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jqthumb.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
