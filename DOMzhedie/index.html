@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link href="css/demo.css" rel="stylesheet" type="text/css">
+  	<link href="http://fonts.useso.com/css?family=Abril+Fatface" rel="stylesheet" type="text/css">
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="jqcjk-container">
+		
+		<noscript>
+		    <div class="warning">
+		      Your browser has JavaScript disabled. OriDomi needs JavaScript turned on
+		      to work. Otherwise, all you&rsquo;ll see here are some flat text and images.
+		      Visit <a href="http://www.enable-javascript.com">this site</a> if you need
+		      help turning it on.
+		    </div>
+		 </noscript>
+		 <div id="unsupported" class="warning">
+		    Sorry, looks like your browser is too old to support OriDomi, so all you&rsquo;ll
+		    see below are some flat images and text. To get the most out of the web,
+		    consider upgrading to a browser that supports modern standards. Try
+		    <a href="https://www.google.com/chrome">Chrome</a>,
+		    <a href="http://www.apple.com/safari">Safari</a>, or
+		    <a href="http://www.firefox.com">Firefox</a>.
+		  </div>
+		  <h1 class="logo">OriDomi<sup>1.1</sup></h1>
+		  <section id="demos">
+    <h2>
+      Fold the
+      <a href="http://en.wikipedia.org/wiki/Document_Object_Model" target="_blank">DOM</a>
+      like paper.
+    </h2>
+    <h3>
+      Use your mouse or touch to manipulate these, or press the <b>fold</b>
+      button to see a random effect:
+    </h3>
+    <ul>
+      <li>
+        <div class="demo demo1">
+          <h3>Hello.</h3>
+          <p>from DOM-land</p>
+        </div>
+        <div>
+          <div class="label">accordion(20)</div>
+          <div class="button" data-n="0">fold</div>
+        </div>
+      </li>
+
+      <li>
+        <div class="demo demo5"></div>
+        <div>
+          <div class="label">reveal(30)</div>
+          <div class="button" data-n="4">fold</div>
+        </div>
+      </li>
+
+      <li>
+        <div class="demo demo2">
+          <h3>Late<br>Capitalism</h3>
+        </div>
+        <div>
+          <div class="label">reveal(40)</div>
+          <div class="button" data-n="1">fold</div>
+        </div>
+      </li>
+
+      <li>
+        <div class="demo demo3">
+          <h3>Tennis<br>Court<br>Oath</h3>
+        </div>
+        <div>
+          <div class="label">accordion(-20)</div>
+          <div class="button" data-n="2">fold</div>
+        </div>
+      </li>
+
+      <li>
+        <div class="demo demo4">
+          Ersatz
+        </div>
+        <div>
+          <div class="label">stairs(18)</div>
+          <div class="button" data-n="3">fold</div>
+        </div>
+      </li>
+
+      <li>
+        <div class="demo demo6">
+<pre>
+
+/*
+
+ $$$$$$\            $$\ $$$$$$$\                          $$\
+$$  __$$\           \__|$$  __$$\                         \__|
+$$ /  $$ | $$$$$$\  $$\ $$ |  $$ | $$$$$$\  $$$$$$\$$$$\  $$\
+$$ |  $$ |$$  __$$\ $$ |$$ |  $$ |$$  __$$\ $$  _$$  _$$\ $$ |
+$$ |  $$ |$$ |  \__|$$ |$$ |  $$ |$$ /  $$ |$$ / $$ / $$ |$$ |
+$$ |  $$ |$$ |      $$ |$$ |  $$ |$$ |  $$ |$$ | $$ | $$ |$$ |
+ $$$$$$  |$$ |      $$ |$$$$$$$  |\$$$$$$  |$$ | $$ | $$ |$$ |
+ \______/ \__|      \__|\_______/  \______/ \__| \__| \__|\__|
+
+v. 1.0.0
+
+*/
+
+var demo6 = new OriDomi('.demo6', {
+  hPanels: 4,
+  ripple:  true,
+  shading: false
+});
+
+</pre>
+        </div>
+        <div>
+          <div class="label">stairs(20)</div>
+          <div class="button" data-n="5">fold</div>
+        </div>
+      </li>
+
+      <li id="fibonacci">
+        <div class="demo demo7"></div>
+        <div>
+          <div class="label">reveal(45)</div>
+          <div class="button" data-n="6">fold</div>
+        </div>
+        <p class="note">
+          * This demo illustrates the ability to define custom panel sizes:
+          the proportions here follow a reversed Fibonacci Sequence
+          (1, 1, 2, 3, 5, 8, 13, 21, 34).
+        </p>
+      </li>
+
+    </ul>
+
+  </section>
+		<!--<div class="jqcjk-content bgcolor-8">
+			
+		</div>-->
+		
+	</div>
+	
+	<script src="js/oridomi.min.js"></script>
+  	<script src="js/demo.js"></script>
+</body>
+</html>
