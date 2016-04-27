@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<title>3D Interactive Gallery with CSS and jQuery - Onextrapixel</title>
+<meta charset="utf-8"/>
+
+<link href="css/style.css" rel="stylesheet" type="text/css" media="screen"/>
+
+</head>
+<body>
+
+<div class="gallery">
+  <div class="item">
+    <img align="left" src="img/c2NAjXD.jpg"/>
+    <span class="caption">
+      <h1>
+        jqcjk.com
+      </h1>
+      <p>哈哈哈哈哈哈
+        jqcjk.com
+      </p>
+    </span>
+  </div>
+  <div class="item">
+    <img align="left" src="img/FeCziip.png"/>
+    <span class="caption">
+      <h1>
+        jqcjk.com
+      </h1>
+     <p>
+        jqcjk.com
+      </p>
+    </span>
+  </div>
+  <div class="item">
+    <img align="left" src="img/OYlw7Pw.jpg"/>
+    <span class="caption">
+      <h1>
+        jqcjk.com
+      </h1>
+    <p>
+        jqcjk.com
+      </p>
+    </span>
+  </div>
+  <div class="item">
+    <img align="left" src="img/MVammek.jpg"/>
+    <span class="caption">
+      <h1>
+        jqcjk.com
+      </h1>
+      <p>
+        
+        jqcjk.com
+      </p>
+    </span>
+  </div>
+  <div href="#" class="item">
+    <img align="left" src="img/gfp57KR.png"/>
+    <span class="caption">
+      <h1>
+        jqcjk.com
+      </h1>
+      <p>
+        和哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+        jqcjk.com
+      </p>
+    </span>
+  </div>
+  <div class="item">
+    <img align="left" src="img/FeCziip.png"/>
+    <div class="caption">
+      <h1>
+        jqcjk.com
+      </h1>
+      <p>
+       
+        jqcjk.com
+      </p>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="http://libs.useso.com/js/jquery/1.6.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $(".item").click(function (e) {
+        e.stopPropagation();
+        $(".item").removeClass("clicked");
+        $(this).toggleClass("clicked");
+        $("body").addClass("showing-item");
+ 
+        var offset = $(this).offset();
+        var pos = offset.left + $(this).width()
+        var center = $(".gallery").width() / 2;
+        if (pos > center) {
+            var align = "left";
+        } else {
+            var align = "right";
+        }
+        $(this).removeClass(".left, .right").addClass(align);
+ 
+        return false;
+    });
+ 
+    $('html').click(function () {
+        $(".item").removeClass("clicked");
+        $("body").removeClass("showing-item");
+    });
+});
+</script>
+
+</body>
+</html>
