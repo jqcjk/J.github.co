@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html id="demo5" lang="zh" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>jQuery扁平化图标文字阴影特效插件Demo1_jqcjk.com-自由分享jQuery、html5、css3的插件库</title>
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		
+		<!-- Edit Below -->
+		<script type="text/javascript" src="http://libs.useso.com/js/jquery/1.9.1/jquery.min.js"></script>
+    	<script type="text/javascript" src="js/jquery.flatshadow.js"></script>
+    	<link rel="stylesheet" type="text/css" href="css/style.css" />
+    	<link href='css/elusive-webfont.css' rel='stylesheet' type='text/css'>
+	</head>
+	<body id="demo5">
+		<div class="container">
+
+			<div class="header">
+				<h1>jQuery Flat Shadow Demo 5: Works with Icon Fonts</h1>
+				<p>更多精彩内容请关注：<a href="http://www.jqcjk.com/" target="_blank">jqcjk.com</a></p>	
+			</div>
+
+			<div class="menu">
+				<a href="index.html">Demo 1</a>
+				<a href="index2.html">Demo 2</a>
+				<a href="index3.html">Demo 3</a>
+				<a href="index4.html">Demo 4</a>
+				<a class="active" href="index5.html">Demo 5</a>
+			</div>
+		
+		<div class="main">
+	       	<div data-angle="SE" class="flat-icon"> <i class="customicon-home"></i> </div>
+         	<div data-angle="SE" class="flat-icon"> <i class="customicon-camera"></i> </div>
+         	<div data-angle="SE" class="flat-icon"> <i class="customicon-map-marker"></i> </div>
+         	<div data-angle="SE" class="flat-icon"> <i class="customicon-picture"></i> </div>
+	    </div>
+	    <a class="reload" href="#"onClick="document.location.reload(true)"><i class="customicon-refresh"></i> Reload Page</a>
+	</div><!-- Container -->
+		
+	
+	<script type="text/javascript">
+    $(".flat-icon").flatshadow({
+      fade: true,
+      boxShadow: "#d7cfb9"
+    });
+  </script>
+		
+	</body>
+</html>
