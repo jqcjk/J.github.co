@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh" class="no-js demo-1">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>jQuery信用卡_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+		<meta name="description" content="jQuery信用卡" />
+		<meta name="keywords" content="jquery信用卡,jquery表单验证,jquery表单,credit card,jquery翻转,css3翻转效果,表单" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<!-- custom demo style -->
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" href="css/card.css">
+		<script src="js/modernizr.custom.js"></script>
+		<style>
+        .demo-container {
+            width: 350px;
+            margin: 50px auto;
+        }
+
+        form {
+            margin: 30px;
+        }
+        input {
+            width: 200px;
+            margin: 10px auto;
+            display: block;
+        }
+
+    	</style>
+	</head>
+	<body>
+		<div class="container">
+			<!-- Top Navigation -->
+			<div class="codrops-top clearfix">
+				<a class="codrops-icon codrops-icon-prev" href="http://www.jqcjk.com"><span>jQuery之家</span></a>
+				<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://www.jqcjk.com/jQuery/Form/20141026303.html"><span>返回下载页</span></a></span>
+			</div>
+			<header>
+				<h1>jQuery信用卡 <span></span></h1>	
+				<nav class="codrops-demos">
+					
+				</nav>
+			</header>
+			<div class="main clearfix">
+				<div class="demo-container">
+			        <div class="card-wrapper"></div>
+
+			        <div class="form-container active">
+			            <form action="">
+			                <input placeholder="Card number" type="text" name="number">
+			                <input placeholder="Full name" type="text" name="name">
+			                <input placeholder="MM/YY" type="text" name="expiry">
+			                <input placeholder="CVC" type="text" name="cvc">
+			            </form>
+			        </div>
+			    </div>
+
+			</div>
+			
+		</div><!-- /container -->
+		<script src="http://libs.useso.com/js/jquery/2.1.1/jquery.min.js"></script>
+	    <script src="js/card.js"></script>
+	    <script>
+	        $('.active form').card({
+	            container: $('.card-wrapper')
+	        })
+	    </script>
+		<script type="text/javascript">
+		var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+		document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe7a3e6b56f1bd183761873eec17147ca' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</body>
+</html>
