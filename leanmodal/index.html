@@ -1,0 +1,83 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>leanModal - a JQuery modal plugin that works with your CSS</title>
+		<meta name="description" content="leanModal - a JQuery modal plugin that works with your CSS" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+    			$('a[rel*=leanModal]').leanModal({ top : 200, closeButton: ".modal_close" });		
+			});
+		</script>
+		
+	</head>
+<body>
+		<div id="banner">
+			<p>leanModal is a @finelysliced project. If you find it useful, and wish to support the development of more great plugins, maybe consider buying my pixel icons for just $6!!</p>
+		</div>
+		<h1>leanModal.js</h1>
+		<p id="intro">Bare bones modal dialog windows.</p>
+		
+<div class="section-split">
+			<div id="strengths" class="section-lt box">
+				<h2>Strengths</h2>
+				<ul>
+					<li>perfect for hidden page content</li>
+					<li>uber light at just over 1kb (minified)</li>
+					<li>flexible width &amp; height</li>
+					<li>image free</li>
+					<li>multiple instances on one page</li>
+					<li>great for login, sign up &amp; alert panels, etc.</li>
+				</ul>
+			</div>
+			<div id="weaknesses" class="section-rt box">
+				<h2>Weaknesses</h2>
+				<ul>
+					<li>no gallery, iframe or ajax support</li>
+					<li>untested in IE6.</li>
+				</ul>
+			</div>
+		</div>
+<p id="examples" class="section box">
+			<strong>Examples:</strong>
+			<a id="go" rel="leanModal" name="test" href="#test">点击这里Basic</a> | <a id="go" rel="leanModal" name="signup" href="#signup">点击这里With Close Button</a>
+	</p>
+<div id="signup">
+	<div id="signup-ct">
+				<div id="signup-header">
+					<h2>Create a new account</h2>
+					<p>It's simple, and free.</p>
+					<a class="modal_close" href="#"></a>
+				</div>
+				
+				<form action="">
+     
+				  <div class="txt-fld">
+				    <label for="">Username</label>
+				    <input id="" class="good_input" name="" type="text" />
+
+				  </div>
+				  <div class="txt-fld">
+				    <label for="">Email address</label>
+				    <input id="" name="" type="text" />
+				  </div>
+				  <div class="txt-fld">
+				    <label for="">Password</label>
+				    <input id="" name="" type="text" />
+
+				  </div>
+				  <div class="btn-fld">
+				  <button type="submit">Sign Up &raquo;</button>
+</div>
+			    </form>
+	</div>
+</div>
+		<div id="test">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum libero purus, convallis nec vestibulum eget, luctus vitae purus. Vestibulum non mauris et sem vulputate pellentesque ac a turpis. Ut vel lacus vitae justo vestibulum lobortis. Nunc ipsum ipsum, laoreet id dictum nec, fermentum vel purus. Maecenas nisl felis, faucibus non rutrum eu, sollicitudin sed ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent dignissim lacinia tempus. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla facilisi. Nulla accumsan pellentesque velit, a malesuada diam tristique a. Fusce eleifend magna erat, et imperdiet orci. Quisque sapien mauris, malesuada eu tristique pulvinar, placerat id ligula. Vivamus vitae viverra nulla. Donec eget turpis vel erat malesuada sodales.</p>
+		</div>
+</body>
+</html>
