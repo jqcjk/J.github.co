@@ -1,0 +1,33 @@
+{
+  "name": "jquery.formance",
+  "version": "0.0.1",
+  "description": "A general purpose library for formatting and validating form fields.",
+  "main": "lib/jquery.formance.js",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "cake test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/omarshammas/jquery.formance.git"
+  },
+  "keywords": [
+    "form",
+    "input",
+    "field",
+    "validate",
+    "format"
+  ],
+  "author": "Omar Shammas",
+  "license": "MIT",
+  "gitHead": "dda9e9c8efe5e80a1dae2acd8fe8f90f131d6c1d",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/omarshammas/jquery.formance/issues"
+  }
+}
