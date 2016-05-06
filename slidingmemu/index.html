@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>jQuery Sliding Menu Plugin</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery-sliding-menu.css">
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery-sliding-menu.js"></script>
+		<script type="text/javascript">
+
+			$(document).ready(function()
+			{
+				$('#menu').menu();
+
+			});
+
+		</script>
+	</head>
+
+	<body>
+		
+		<header>
+			<h1>jQuery Sliding Menu</h1>
+			<p>The creatively named, mobile-like, list-style, responsive sliding navigation menu</p>
+		</header>
+		<section>
+			<h2>Demo</h2>
+			<div id="menu">
+				<ul>
+					<li>
+						<a href="#">Artists</a>
+						<ul>
+							<li>
+								<a href="#">Aerosmith</a>
+								<ul>
+									<li>
+										<a href="#">Get Your Wings</a>
+										<ul>
+											<li>
+												<a href="#">Train Kept A-Rollin'</a>
+											</li>
+											<li>
+												<a href="#">Same Old Song and Dance</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Eagles</a>
+								<ul>
+									<li>
+										<a href="#">Hotel California</a>
+										<ul>
+											<li>
+												<a href="#">Hotel California</a>
+											</li>
+											<li>
+												<a href="#">Pretty Maids All in a Row</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Led Zeppelin</a>
+								<ul>
+									<li>
+										<a href="#">Physical Graffiti</a>
+										<ul>
+											<li>
+												<a href="#">In My Time of Dying</a>
+											</li>
+											<li>
+												<a href="#">Houses of the Holy</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Albums</a>
+						<ul>
+							<li>
+								<a href="#">Get Your Wings</a>
+								<ul>
+									<li>
+										<a href="#">Train Kept A-Rollin'</a>
+									</li>
+									<li>
+										<a href="#">Same Old Song and Dance</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Hotel California</a>
+								<ul>
+									<li>
+										<a href="#">Hotel California</a>
+									</li>
+									<li>
+										<a href="#">Pretty Maids All in a Row</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Physical Graffiti</a>
+								<ul>
+									<li>
+										<a href="#">In My Time of Dying</a>
+									</li>
+									<li>
+										<a href="#">Houses of the Holy</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Songs</a>
+						<ul>
+							<li>
+								<a href="#">In My Time of Dying</a>
+							</li>
+							<li>
+								<a href="#">Houses of the Holy</a>
+							</li>
+							<li>
+								<a href="#">Hotel California</a>
+							</li>
+							<li>
+								<a href="#">Pretty Maids All in a Row</a>
+							</li>
+							<li>
+								<a href="#">Train Kept A-Rollin'</a>
+							</li>
+							<li>
+								<a href="#">Same Old Song and Dance</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Genres</a>
+						<ul>
+							<li>
+								<a href="#">Rock</a>
+								<ul>
+									<li>
+										<a href="#">Hotel California</a>
+									</li>
+									<li>
+										<a href="#">Pretty Maids All in a Row</a>
+									</li>
+									<li>
+										<a href="#">Train Kept A-Rollin'</a>
+									</li>
+									<li>
+										<a href="#">Same Old Song and Dance</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Hard rock</a>
+								<ul>
+									<li>
+										<a href="#">In My Time of Dying</a>
+									</li>
+									<li>
+										<a href="#">Houses of the Holy</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Settings</a>
+						<ul>
+							<li>
+								<a href="#">Profile</a>
+							</li>
+							<li>
+								<a href="#">Player</a>
+								<ul>
+									<li>
+										<a href="#">Volume</a>
+									</li>
+									<li>
+										<a href="#">Equalizer</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section>
+			<h2>Usage</h2>
+			<pre>$('#selector').menu(options);</pre>
+		</section>
+		<section>
+			<h2>Options</h2>
+			<table>
+				<tbody>
+					<tr>
+						<th>dataJSON</th>
+						<td>false</td>
+						<td>A JSON object to build the menu from. View sample here.</td>
+					</tr>
+					<tr>
+						<th>backLabel</th>
+						<td>'Back'</td>
+						<td>Label for the back button. Set to <em>true</em> to use the link's own label.</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<footer>
+			Developed and maintained by <a href="//twitter.com/alizahid0">Ali Zahid</a> under the <a href="http://opensource.org/licenses/MIT">MIT license</a>
+		</footer>
+	</body>
+</html>
