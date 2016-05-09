@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      
+        <link rel="stylesheet" type="text/css" href="http://clubdesign.github.io/floatlabels.js/stylesheets/stylesheet.css" media="screen" />
+        <meta name="description" content="Follows the famous Float Label Pattern. A Plugin built on jQuery." />
+        <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://clubdesign.github.io/floatlabels.js/javascripts/socialite.js" type="text/javascript"></script>
+        <script src="http://clubdesign.github.io/floatlabels.js/javascripts/prism.js" type="text/javascript"></script>
+        <script src="floatlabels.js" type="text/javascript"></script>
+        <script src="http://clubdesign.github.io/floatlabels.js/javascripts/main.js" type="text/javascript"></script>
+
+        
+
+
+        <!--[if lt IE 9]>
+        <script src="http://jqcjk.qiniudn.com/html5.js"></script>
+        <![endif]-->
+
+        <title>floatlabels.js by Clubdesign</title>
+    </head>
+
+    <body>
+    
+        <header>
+            <div class="inner">
+                <h1>floatlabels<span>.js</span></h1><h2>Follows the famous Float Label Pattern. Built on jQuery.</h2>
+                <!-- <a href="https://github.com/clubdesign/floatlabels.js" class="button"><small>View project on</small>GitHub</a> -->
+            </div>
+
+            <div id="hero">
+                
+               
+
+                <div class="inner">
+                    <div id="demo-input">
+
+                        <div id="tagbox">
+                            Type <strong>anything</strong> into the input textfield to see the floated label in action.
+                        </div>
+
+                        <div id="tagbox2">
+                            <strong>Hooray!</strong> There it is!<br>
+                            Now clear the field again.
+                        </div>
+                        
+                        <input type="text" id="demo-floatlabel" placeholder="Start typing..." data-label="这是一个浮动标签。它保持不动,直到清除。">
+
+                    </div>
+                </div>
+
+            </div>
+
+            
+
+        </header>
+
+
+
+        <section id="colorlines" class="clearfix">
+            <div class="_1"></div>
+            <div class="_2"></div>
+            <div class="_3"></div>
+            <div class="_4"></div>
+            <div class="_5"></div>
+        </section>
+
+        <div id="content" class="clearfix">
+    
+            <section id="main-content">
+
+                <h3>Wait. Floated Labels?</h3><br style="clear:both">
+
+                <p>
+                    The Float Label Pattern found his success after <a href="http://bradfrostweb.com/blog/post/float-label-pattern/">Brad Frost</a> wrote a blog post about Float Label Patterns.
+                    The idea is based on a <a href="http://dribbble.com/shots/1254439--GIF-Float-Label-Form-Interaction?list=users" target="_blank">Dribbble Shot by <a href="http://dribbble.com/mds" target="_blank">Matt D Smith</a>.
+                    The Pattern is easy to explain. On User Interaction with an input field the placeholder value moves up, and is displayed above the typed text. This Plugin offers you the possibility to upgrade your forms with this famous pattern.
+                </p>
+
+                
+
+                <h3>Installation & Dependencies</h3><br style="clear:both">
+
+                <p>
+                    Include the latest release of <strong>jQuery</strong>. The Google AJAX Libraries API can be used for this but you could also host the library yourself.<br>
+                    Download floatlabels.js from Github, upload the file to your server & include it in your code AFTER jQuery.<br><br>
+                    Currently floatlabels.js is dependant from jQuery <strong>1.8+</strong>. Lower Versions have not been tested.
+                </p>
+
+<pre><code class="language-markup">&lt;head&gt;
+..
+&lt;script src=&quot;jquery.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;floatlabels.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+..
+&lt;/head&gt;</code></pre>
+
+            <h3>Initialization</h3><br style="clear:both">
+
+            <p>
+                Basically floatlabel is initialized with on simple call.
+            </p>
+
+<pre><code class="language-markup">&lt;head&gt;
+..
+&lt;script src=&quot;jquery.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;floatlabels.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+..
+&lt;script&gt;
+    $('input.floatlabel').floatlabel();
+&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div&gt;
+        &lt;input type=&quot;text&quot; id=&quot;test-input&quot; placeholder=&quot;This is the placeholder&quot; class=&quot;floatlabel&quot;&gt;
+    &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+
+            <p>
+                The script cycles through all your selected input fields and converts them to inputs with floated labels. <strong>Done</strong>.
+            </p>
+
+            <h3>Customization</h3><br style="clear:both">
+
+            <p>
+                The script offers some customization methods for your labels.<br><br>
+
+                <h4>Inline Data Attributes:</h4>
+
+                <div class="block">
+                    <p>
+                        <strong>data-label</strong><br>
+                        Add this to your input field if you want the floating label to be different from your placeholder value.
+                    </p>
+                    <p>
+                        <strong>data-class</strong><br>
+                        Add the classes you want to add to this generated label in here. You can add multiple classes by seperating with spaces.
+                    </p>
+                </div>
+            </p>
+
+            <h4>Javascript Options</h4>
+            
+            <div class="block">
+                <p>
+                    <strong>slideInput</strong>             <em>Default: true</em><br>
+                    <span>
+                        If true the input field will slide down (height) to fit the floating label.
+                    </span>
+                </p>
+                <p>
+                    <strong>labelStartTop</strong>          <em>Default: '20px'</em><br>
+                    <span>
+                        How many pixel the label should travel when enabled. This sets the starting point of the animation from the top of the input field. Play around with it.
+                    </span>
+                </p>
+                <p>
+                    <strong>labelEndTop</strong>            <em>Default: '10px'</em><br>
+                    <span>
+                        Where the Label should stop animating in px from the top of the input field.
+                    </span>
+                </p>
+                <p>
+                    <strong>transitionDuration</strong>     <em>Default: 0.3</em><br>
+                    <span>
+                        Label Transition time in seconds.
+                    </span>
+                </p>
+                <p>
+                    <strong>transitionEasing</strong>       <em>Default: 'ease-in-out'</em><br>
+                    <span>
+                        Easing function to use. <a href="http://easings.net/" target="_blank">Here are some examples of other easing functions.</a>
+                    </span>
+                </p>
+                <p>
+                    <strong>labelClass</strong>             <em>Default: ''</em><br>
+                    <span>
+                        Another way to add classes to the label element.
+                    </span>
+                </p>
+                <p>
+                    <strong>typeMatches</strong>            <em>Default: /text|password|email|number|search|url/</em><br>
+                    <span>
+                        This Regex Expression is triggered at the initializiation of the script. It checks the type="text" if the element the plugin is triggered on is valid. Some advanced users might want to expand this to the new HTML5 textfield types.
+                    </span>
+                </p>
+
+            </div>
+
+            <p>
+                <h4>Configuration</h4>
+            </p>
+
+<pre><code class="language-markup">..
+&lt;script&gt;
+    $('input.floatlabel').floatlabel({
+        // Add Configuration Object here
+    });
+&lt;/script&gt;
+..</code></pre>
+
+            <h3>Examples</h3><br style="clear:both">
+
+            <p>
+                Here are some examples on CodePen. Just view the source and play with it.
+            </p>
+            
+            
+
+      
+
+
+  
+  </body>
+</html>
