@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="superTables.css" rel="stylesheet" type="text/css" />
 <script language="javascript" src="jquery-1.4.4.min.js" ></script>
 
@@ -10,8 +10,8 @@
 <script language="javascript">
 //var tabProduct = document.getElementById("tabProduct");
 //  
-// ���ñ���ɱ༭
-// ��һ�����ö�������磺EditTables(tb1,tb2,tb2,......)
+// 设置表格可编辑
+// 可一次设置多个，例如：EditTables(tb1,tb2,tb2,......)
 //EditTables(tabProduct);
     $(function() {
        
@@ -42,7 +42,7 @@
             var tr = trs[i]; 
             var pk = eval(tr.pkey);
             for (var j = 0; j < pk.length; j++) {
-                alert("�޸���������"+pk[j].key+"="+pk[j].value);
+                alert("修改行主键："+pk[j].key+"="+pk[j].value);
             }
             var values = tr.values;
         }
@@ -59,7 +59,7 @@
         return true;       
     }
 </script>
-<title>�༭��������</title>
+<title>编辑表格数据</title>
 <style type="text/css">
 <!--
 body,div,p,ul,li,font,span,td,th{
@@ -103,39 +103,39 @@ width: 90%;
 
 <body>
 <form id="form1" name="form1" method="post" action="">
-<h3>�̶����пɱ༭�ı���</h3>
+<h3>固定行列可编辑的表格</h3>
 <div>
-<h3>���ܣ�</h3>
+<h3>功能：</h3>
 <ul>
-<li>�̶�����</li>
-<li>�����ڱ���ֱ�ӱ༭</li>
-<li>ʹ��ajax�����ݲ���</li>
-<li>ʹ��tab���ڿɱ༭���л�</li>
+<li>固定行列</li>
+<li>可以在表格直接编辑</li>
+<li>使用ajax对数据操作</li>
+<li>使用tab键在可编辑列切换</li>
 </ul>
 </div>
-����
+例：
 <table  width="608"  id="tabProduct">
     <tr>
       <td width="20" style="text-align:center;"  align="center"  rowspan="2" bgcolor="#EFEFEF" Name="Num"><input type="checkbox" name="checkbox" value="checkbox" /></td>
-      <td width="60" style="text-align:center;"  bgcolor="#EFEFEF" Name="Num" rowspan="2"  style=" text-align:center">���</td>
-      <td width="478" style="text-align:center;"  bgcolor="#EFEFEF" colspan="4" >�ϼ�</td>   
+      <td width="60" style="text-align:center;"  bgcolor="#EFEFEF" Name="Num" rowspan="2"  style=" text-align:center">序号</td>
+      <td width="478" style="text-align:center;"  bgcolor="#EFEFEF" colspan="4" >合计</td>   
     </tr>
     <tr>
-      <td width="152" bgcolor="#EFEFEF" style="text-align:center;"  Name="ProductName" EditType="DropDownList" DataItems="{text:'A',value:'a'},{text:'B',value:'b'},{text:'C',value:'c'},{text:'D',value:'d'}">��Ʒ����</td>
-      <td width="103" bgcolor="#EFEFEF" style="text-align:center;" Name="Amount" EditType="TextBox">����</td>
-      <td width="103" bgcolor="#EFEFEF" style="text-align:center;"  Name="Price" EditType="TextBox">����</td>
-      <td width="120" bgcolor="#EFEFEF" style="text-align:center;"  Name="SumMoney" Expression="Amount*Price" Format="#,###.00">�ϼ�</td>
+      <td width="152" bgcolor="#EFEFEF" style="text-align:center;"  Name="ProductName" EditType="DropDownList" DataItems="{text:'A',value:'a'},{text:'B',value:'b'},{text:'C',value:'c'},{text:'D',value:'d'}">商品名称</td>
+      <td width="103" bgcolor="#EFEFEF" style="text-align:center;" Name="Amount" EditType="TextBox">数量</td>
+      <td width="103" bgcolor="#EFEFEF" style="text-align:center;"  Name="Price" EditType="TextBox">单价</td>
+      <td width="120" bgcolor="#EFEFEF" style="text-align:center;"  Name="SumMoney" Expression="Amount*Price" Format="#,###.00">合计</td>
     </tr>
     
      
 </table>
 
 <p><br />
-    <input id="add" type="button" name="add" value="����"/>
-    <input type="button" name="Submit2" value="ɾ��" onclick="$.jtool.deleteRow('tabProduct',del)" />
-    <input type="button" name="Submit2" value="�޸�����Ϣ" onclick="gettr();" />
-    <input type="button" name="Submit22" value="����" onclick="window.location.reload()" />
-    <input type="submit" name="Submit3" value="�ύ" onclick="return false;" />
+    <input id="add" type="button" name="add" value="新增"/>
+    <input type="button" name="Submit2" value="删除" onclick="$.jtool.deleteRow('tabProduct',del)" />
+    <input type="button" name="Submit2" value="修改行信息" onclick="gettr();" />
+    <input type="button" name="Submit22" value="重置" onclick="window.location.reload()" />
+    <input type="submit" name="Submit3" value="提交" onclick="return false;" />
 </p>
 
 </form>
